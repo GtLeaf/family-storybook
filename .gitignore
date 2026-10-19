@@ -1,0 +1,12 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.DS_Store
+tmp/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example

@@ -1,0 +1,89 @@
+# family-storybook · 一起的小冒险
+
+手机 Web 体验版 v0.4，2026-10-20。
+
+面向 4—7 岁儿童与家长的可玩绘本。首章《风吹走的野餐》包括找物品、选择陪伴方式、固定野餐垫、安排座位与装饰，以及保存实际布局的冒险日记。
+
+## 使用
+
+```sh
+npm install
+npm run dev
+```
+
+打开终端显示的本机地址。同一 Wi-Fi 的手机可打开 Network 地址；这是本地开发预览，不是公共网站。关闭开发服务后地址不可用。
+
+```sh
+npm run typecheck
+npm run lint
+npm test
+npm run build
+npx playwright install chromium webkit
+npm run test:e2e
+npm run preview
+```
+
+生产静态文件输出到 `dist/`，使用相对资源地址，可放到静态托管子目录。不依赖云服务或账户。
+
+## GitHub Pages 发布
+
+在线体验：<https://gtleaf.github.io/family-storybook/>
+
+推送到 `main` 后，[Pages 工作流](.github/workflows/pages.yml)自动安装锁定依赖、运行检查、构建并发布 `dist/`。GitHub 仓库的 Settings → Pages → Source 选择 **GitHub Actions**。只有构建产物会发布为网站，源码、美术母版和录音原件保留在仓库中。
+
+本地检查 Pages 子目录构建：
+
+```sh
+npm ci
+npm run build -- --base=/family-storybook/
+npm run preview -- --base=/family-storybook/
+```
+
+## 体验
+
+- 新版淡彩角色、五处故事场景；12 个逻辑页面内安排约 19 个镜头节拍，角色会移动、转向、说话和安静陪伴。
+- 选择“听故事”或“家长读”；正文使用逐句配音同步镜头，家长读可点“继续讲”，也可看完整画面或展开整页文字。翻页、退出和切到后台停止声音，失败时文字可继续。
+- 收集用品和放石头直接点击；陪伴选择先选中再确认。
+- 餐具齐全后可以交换座位；纸花、叶片可选可取消。
+- 收集后物品离开藏匿处；固定后的石头和篮子保留到结尾，角色站位与本次座位顺序一致。
+- 进度只保存在当前浏览器；暂停、刷新、返回后可继续。
+- 故事顶部“上一页”按故事顺序回看，第一页返回书架；保留收集、陪伴选择与野餐布局，返回选择页可以重选。完成后回看也会记住当前页面。
+- 家长页可调整声音、减少动态与明确清除本地记录。
+
+## 实现结构
+
+- `src/content/story.ts`：内容、场景 ID 与对白分支。
+- `src/lib/progress.ts`：平台无关状态规则、存档校验与备份。
+- `src/content/storyboard.ts`：镜头、角色站位、朝向和移动参数。
+- `src/components/StoryScene.tsx`、`src/storyboard.css`：纸偶角色、相机和环境动作，支持暂停与减少动态。
+- `src/content/audio.ts`：逐句与交互音频 ID；正文引用 `audio/tts/v2/`，部分反馈复用 v1，旧整页录音保留在源码目录。
+- `src/lib/useStoryAudio.ts`：录音播放、顺序播放、取消、音量及失败提示，不调用浏览器语音合成。
+- `src/components/`：可点击物品、野餐布局、插画、弹层。
+- `public/art/`：优化后的发布插画；`docs/assets/`：源图与生成提示。
+- `src/lib/progress.test.ts`：状态与存档测试；`tests/`：浏览器全流程。
+
+## 当前方案
+
+1. [产品方案](docs/01-产品方案.md)
+2. [故事与交互脚本](docs/02-首章故事与交互脚本.md)
+3. [视觉与交互规范](docs/03-视觉与交互规范.md)
+4. [开发路线与验收](docs/04-开发路线与验收.md)
+5. [版权与素材台账](docs/05-版权与素材台账.md)
+6. [后续 ESP32 迁移](docs/06-ESP32圆屏迁移与交互约束.md)
+7. [实现验证记录](docs/07-Web实现与验证记录.md)
+8. [新版脚本与分镜](docs/08-新版脚本与分镜重制方案.md)
+9. [配音变更与重录清单](docs/09-新版配音变更与重录清单.md)
+
+v0.2 圆屏优先方案保存在 `docs/archive/v0.2/`。当前 Web 使用手机竖屏布局，未来共享内容 ID、规则与高质量源资产，硬件 UI 与声音存储另行适配。
+
+## 尚需验证
+
+真实手机和微信内置浏览器的声音播放、角色配音听感、儿童操作与家长参与、家庭独立使用及新故事需求。浏览器自动检查不代表上述验证已完成。
+
+## 语音制作
+
+以[新版重录清单](docs/09-新版配音变更与重录清单.md)为准：19 句正文变更、8 句文字未变、3 段交互重录。`audio/tts/v2/` 的 30 段正式角色录音已全部接入，屹耳两句补录与另外 6 句新逐句录音也已完成；交付及校准记录见 [v2 配音交付记录](audio/tts/v2/delivery_manifest.md)。正式录音按同名文件替换即可，镜头跟随音频事件，不依赖临时版时长。日记的离屏活动保留文字，不自动接播。
+
+[旧版语音任务](TTS_TASK.md)及 `audio/tts/v1/` 保留作复用参考，原先确认的音色样本在 `audio/tts/v1/samples/`。v2 不再使用临时音色。
+
+美术发布资源由 `node scripts/prepare-art.mjs` 生成。正文修改后运行 `node scripts/export-storyboard.mjs` 导出台词。`scripts/integrate-recorded-audio.py` 按交付记录从保留的 WAV 重建音频；来源或输出文件校验不符时停止。早期临时配音生成器已加正式录音保护，不能用于覆盖当前交付。

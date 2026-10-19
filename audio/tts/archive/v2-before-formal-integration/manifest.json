@@ -1,0 +1,272 @@
+[
+  {
+    "id": "v2_intro_0",
+    "speaker": "故事开始了",
+    "text": "维尼和小猪刚准备好野餐，一阵风就赶来了。",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_intro_1",
+    "speaker": "风来过了",
+    "text": "餐巾飘远了，杯子滚到了路边，篮子也倒在草丛旁。",
+    "shot": 1,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_intro_2",
+    "speaker": "维尼",
+    "text": "我想，杯子一定没有长脚。至少，刚才还没有。",
+    "shot": 2,
+    "voice": "Reed (中文（中国大陆）)",
+    "rate": 155,
+    "provisional": true
+  },
+  {
+    "id": "v2_intro_3",
+    "speaker": "小猪",
+    "text": "我们一起找找吧。",
+    "shot": 2,
+    "voice": "Flo (中文（中国大陆）)",
+    "rate": 175,
+    "provisional": true
+  },
+  {
+    "id": "v2_find_0",
+    "speaker": "小猪",
+    "text": "杯子、餐巾，还有篮子。看看树根和草丛，点一点，把它们找回来吧。",
+    "shot": 0,
+    "voice": "小猪",
+    "rate": 175,
+    "provisional": false
+  },
+  {
+    "id": "v2_wind-talk_0",
+    "speaker": "留一点时间给彼此",
+    "text": "东西找回来了。再看看周围，你从哪里看出风来过？是歪向一边的小草，还是晃动的叶子？",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_walk_0",
+    "speaker": "小猪",
+    "text": "屹耳也许想和我们一起。",
+    "shot": 0,
+    "voice": "Flo (中文（中国大陆）)",
+    "rate": 175,
+    "provisional": true
+  },
+  {
+    "id": "v2_walk_1",
+    "speaker": "维尼",
+    "text": "好主意。我们给他留个位置。",
+    "shot": 0,
+    "voice": "维尼",
+    "rate": 155,
+    "provisional": false
+  },
+  {
+    "id": "v2_walk_2",
+    "speaker": "轻轻往前走",
+    "text": "他们收好用品，沿着小路去找屹耳。风小了一点。",
+    "shot": 1,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_worry_0",
+    "speaker": "小猪",
+    "text": "屹耳，要和我们一起野餐吗？",
+    "shot": 0,
+    "voice": "小猪",
+    "rate": 175,
+    "provisional": false
+  },
+  {
+    "id": "v2_worry_1",
+    "speaker": "屹耳",
+    "text": "谢谢。我只是想，风也许还会回来。到时候，垫子会飞，杯子会倒。",
+    "shot": 1,
+    "voice": "Grandpa (中文（中国大陆）)",
+    "rate": 145,
+    "provisional": true
+  },
+  {
+    "id": "v2_worry_2",
+    "speaker": "维尼",
+    "text": "嗯。那我们先不着急。",
+    "shot": 1,
+    "voice": "维尼",
+    "rate": 155,
+    "provisional": false
+  },
+  {
+    "id": "v2_choice_0",
+    "speaker": "轮到你来决定",
+    "text": "我们可以先听他说说，也可以安静地陪他待一会儿。你想试哪一种？",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_companion-talk_0",
+    "speaker": "家长也可以先说说",
+    "text": "如果是你，希望有人听一听，还是安静地陪一会儿？也可以有别的办法。不知道也没关系。",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_stones_0",
+    "speaker": "绕到大树背风的一面",
+    "text": "他们绕到大树背风的一面，重新铺好垫子。",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_stones_1",
+    "speaker": "小猪",
+    "text": "篮子压住了一角。再用三块石头，把另外三个角也固定好。",
+    "shot": 1,
+    "voice": "小猪",
+    "rate": 175,
+    "provisional": false
+  },
+  {
+    "id": "v2_picnic_0",
+    "speaker": "一起布置吧",
+    "text": "给每位朋友留一个位置。你摆一份，也可以请家长摆一份。再添一朵花、一片叶子，就是你们的小小野餐。",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_ending_0",
+    "speaker": "小猪",
+    "text": "风又来了。看，垫子没有跑！",
+    "shot": 0,
+    "voice": "小猪",
+    "rate": 175,
+    "provisional": false
+  },
+  {
+    "id": "v2_ending_1",
+    "speaker": "屹耳",
+    "text": "风还在。不过，这里挺好的。",
+    "shot": 1,
+    "voice": "Grandpa (中文（中国大陆）)",
+    "rate": 145,
+    "provisional": true
+  },
+  {
+    "id": "v2_ending_2",
+    "speaker": "维尼",
+    "text": "嗯。朋友在旁边，东西也不用追了。",
+    "shot": 1,
+    "voice": "维尼",
+    "rate": 155,
+    "provisional": false
+  },
+  {
+    "id": "v2_ending_3",
+    "speaker": "故事的最后",
+    "text": "这一天没有完全照计划发生。不过，他们还是一起开始了野餐。",
+    "shot": 1,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_diary_0",
+    "speaker": "一起完成的一天",
+    "text": "今天，我们找回了野餐用品，也让垫子稳稳地留在原地。每位朋友，都有了自己的位置。",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_response_listen_0",
+    "speaker": "维尼",
+    "text": "你愿意告诉我们，最担心什么吗？",
+    "shot": 0,
+    "voice": "Reed (中文（中国大陆）)",
+    "rate": 155,
+    "provisional": true
+  },
+  {
+    "id": "v2_response_listen_1",
+    "speaker": "屹耳",
+    "text": "我不想刚铺好垫子，就又得追着它跑。",
+    "shot": 1,
+    "voice": "屹耳",
+    "rate": 145,
+    "provisional": false
+  },
+  {
+    "id": "v2_response_listen_2",
+    "speaker": "小猪",
+    "text": "那我们想想，怎么让垫子待在原地。",
+    "shot": 1,
+    "voice": "Flo (中文（中国大陆）)",
+    "rate": 175,
+    "provisional": true
+  },
+  {
+    "id": "v2_response_stay_0",
+    "speaker": "安静地待一会儿",
+    "text": "他们留在屹耳旁边。没有谁急着说下一句话。",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "v2_response_stay_1",
+    "speaker": "屹耳",
+    "text": "谢谢你们等我。也许，我们可以先把垫子压住。",
+    "shot": 1,
+    "voice": "Grandpa (中文（中国大陆）)",
+    "rate": 145,
+    "provisional": true
+  },
+  {
+    "id": "optional_stones_complete",
+    "speaker": "屹耳",
+    "text": "现在看起来，好像可以安心待一会儿了。",
+    "shot": 1,
+    "voice": "屹耳",
+    "rate": 145,
+    "provisional": false
+  },
+  {
+    "id": "ui_choice_listen",
+    "speaker": "旁白",
+    "text": "先听他说说。你愿意告诉我们，最担心什么吗？",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  },
+  {
+    "id": "ui_choice_stay",
+    "speaker": "旁白",
+    "text": "在旁边陪一会儿。不用着急，我们就在这里。",
+    "shot": 0,
+    "voice": "旁白",
+    "rate": 170,
+    "provisional": false
+  }
+]

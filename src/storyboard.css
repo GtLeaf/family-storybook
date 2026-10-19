@@ -1,0 +1,106 @@
+/* 淡彩纸偶舞台：布局、朝向与身体动作各自控制。 */
+:root { --paper: #f6f5f0; --cream: #fcfbf7; --ink: #39392f; --green: #53694f; --line: #dedfd3; background: var(--paper); }
+.scene-art { background: #f2f2e8; }
+.story-page .scene-art { aspect-ratio: 3 / 2; }
+.story-page .scene-art > img { object-fit: fill; }
+.scene-cast { position: absolute; inset: 0; pointer-events: none; transition: transform .65s ease; }
+.scene-actor { position: absolute; transform: translate(-50%, -100%); transition: left 2.5s ease-in-out, top 2.5s ease-in-out, width 2.5s ease-in-out; }
+.actor-facing, .actor-body { width: 100%; transform-origin: 50% 95%; }
+.actor-body > svg { display: block; width: 100%; height: auto; overflow: visible; }
+.actor-bear .face-left, .actor-pig .face-right, .actor-donkey .face-right { transform: scaleX(-1); }
+.actor-shadow { position: absolute; bottom: -1%; left: 12%; width: 76%; height: 3%; border-radius: 50%; background: #62684b1a; z-index: -1; }
+.actor-current { animation: paper-speak 1.6s ease-in-out 1; }
+.actor-speaking { animation: paper-speak 1.6s ease-in-out infinite; }
+.actor-walk .actor-body { animation: paper-walk .55s ease-in-out 5; }
+.actor-pig.actor-walk .actor-body { animation-duration: .42s; animation-iteration-count: 6; }
+.actor-arrive .actor-facing { animation: paper-arrive 1.8s ease-out both; }
+.storyboard-scene > img { transition: transform .65s ease; }
+.camera-props > img, .camera-props > .scene-cast { transform: scale(1.12); transform-origin: 58% 76%; }
+.camera-donkey > img, .camera-donkey > .scene-cast { transform: scale(1.12); transform-origin: 30% 62%; }
+.scene-caption { z-index: 6; background: #fbfaf0dc; padding: 7px 8px; font-size: 10px; pointer-events: none; }
+.wind-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+.wind-leaf { position: absolute; width: 4%; height: auto; opacity: 0; animation: leaf-passing 4.5s ease-in-out 1 both; }
+.wind-leaf-0 { top: 29%; animation-delay: .2s; }
+.wind-leaf-1 { top: 53%; animation-delay: .9s; width: 3%; }
+.wind-leaf-2 { top: 39%; animation-delay: 1.4s; width: 2.5%; }
+.quiet-wind .wind-leaf { animation-duration: 6s; }
+.travel-basket { position: absolute; left: 37%; top: 77%; width: 12%; transition: left 2.5s ease-in-out, top 2.5s ease-in-out, width 2.5s ease-in-out; pointer-events: none; }
+.travel-basket > svg { width: 100%; height: auto; }
+.travel-shot-1 { left: 53%; top: 65%; width: 9%; }
+.gathered-props { position: absolute; left: 37%; top: 72%; display: flex; width: 26%; align-items: flex-end; }
+.gathered-props > svg { width: 38%; height: auto; margin-left: -5%; }
+.story-beats { display: flex; align-items: center; flex-wrap: wrap; gap: 5px 12px; margin: 8px 0 12px; border-top: 1px solid var(--line); }
+.story-beats .text-button { font-size: 12px; min-height: 44px; }
+.beat-progress { font-size: 10px; color: #68745b; letter-spacing: 2px; margin-right: auto; }
+.quiet-button { color: #746f60; font-size: 11px !important; }
+.current-story-line { min-height: 108px; animation: line-arrival .3s ease-out; }
+.page-transcript { margin: 4px 0 18px; font-size: 13px; line-height: 1.9; color: #5d6253; }
+.page-transcript summary { cursor: pointer; min-height: 44px; display: flex; align-items: center; gap: 9px; list-style: none; }
+.page-transcript summary::before { content: "＋"; }
+.page-transcript[open] summary::before { content: "－"; }
+.page-transcript p { padding: 8px 0; }
+.page-transcript b { font-weight: 500; }
+.search-foreground { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 3; }
+.find-object, .find-object.found { width: clamp(48px, 12%, 88px); height: auto; aspect-ratio: 1; padding: 3px; margin: 0; transform: translate(-50%, -50%); border: 0; background: none; transition: opacity .3s; z-index: 2; }
+.find-object:hover:not(:disabled) { transform: translate(-50%, -50%) scale(1.06); }
+.find-object.found { opacity: 0; pointer-events: none; }
+.find-object.found svg { width: 100%; height: 100%; }
+.object-0 { left: 23%; top: 48%; right: auto; }
+.object-1 { left: 76%; top: 73%; right: auto; }
+.object-2 { left: 86%; top: 37%; right: auto; }
+.find-object.hinted:not(.found) { border: 2px dashed #74845f; background: #fcfbf3b3; }
+.find-object.hinted { z-index: 4; }
+.find-object .object-label { bottom: -14px; }
+.collect-flight { position: absolute; inset: 0; pointer-events: none; z-index: 5; }
+.flying-object { position: absolute; width: 11%; height: auto; animation: collected-item .55s ease-in both; }
+.flight-0 { left: 23%; top: 48%; }
+.flight-1 { left: 76%; top: 73%; }
+.flight-2 { left: 86%; top: 37%; }
+.blanket, .stone-blanket { left: 13%; top: 43%; width: 74%; height: 43%; background-color: #f3efe1; border-color: #a6a18a; transform: perspective(650px) rotateX(12deg) rotate(-3deg); }
+.blanket-seam { border-color: #a8a68d99; }
+.corner-basket { left: -7%; bottom: -10%; width: 23%; height: 40%; z-index: 3; }
+.stone-slot, .fixed-stone { position: absolute; width: clamp(56px, 19%, 75px); height: auto; aspect-ratio: 1; z-index: 4; }
+.fixed-stone { pointer-events: none; padding: 7px; }
+.fixed-stone > svg { width: 100%; height: 100%; }
+.corner-0 { left: -8%; top: -24%; }
+.corner-1 { right: -8%; top: -23%; }
+.corner-2 { right: -7%; bottom: -23%; }
+.corner-mark { width: 100%; height: 100%; font-size: 25px; z-index: 1; }
+.flutter-corner { position: absolute; width: 80%; height: 80%; background: #eee9d7; border: 1px solid #aca78f; border-radius: 8%; transform-origin: 15% 90%; animation: corner-flutter 1.8s ease-in-out infinite; }
+.stone-slot.placed > svg { animation: prop-arrival .3s ease-out; }
+.seat-row { top: 14%; left: 8%; right: 8%; gap: 6px; }
+.plate { max-width: 120px; min-width: 48px; border-color: #aaa58d; background: #fbfaf299; }
+.plate.filled { background: #fbfaf4; }
+.drawn-plate { display: block; width: 58%; height: 49%; border: 2px double #a6ae9a; border-radius: 50%; box-shadow: inset 0 0 0 3px #e5e8dc; margin-top: 4%; }
+.plate span.place-name { display: block; padding: 1px 5px; margin-top: 1px; background: #f5f3e9; border: 1px solid #d0cbb8; border-radius: 2px; }
+.decoration-row { left: 30%; right: 30%; height: 30%; bottom: 0; }
+.decoration-space > svg { animation: prop-arrival .3s ease-out; }
+.picnic-board > .scene-cast { z-index: 2; }
+.readonly-board > .wind-layer { z-index: 5; }
+.readonly-board > img, .readonly-board > .scene-cast, .readonly-board > .blanket { transition: scale .65s ease; transform-origin: 50% 50%; }
+.ending-close > img, .ending-close > .scene-cast, .ending-close > .blanket { scale: 1.04; }
+.story-paused *, .story-paused *::before, .story-paused *::after { animation-play-state: paused !important; }
+.cast-still .actor-body, .cast-still .actor-facing { animation: none !important; }
+@keyframes paper-speak { 0%,100% { transform: rotate(0); } 35% { transform: rotate(-1.3deg) translateY(-1%); } 70% { transform: rotate(.7deg); } }
+@keyframes paper-walk { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg) translateY(-2%); } }
+@keyframes paper-arrive { from { translate: 30% 0; } to { translate: 0 0; } }
+@keyframes leaf-passing { 0% { left: -8%; opacity: 0; transform: rotate(-20deg); } 12% { opacity: .7; } 85% { opacity: .6; } 100% { left: 110%; opacity: 0; transform: translateY(50%) rotate(100deg); } }
+@keyframes corner-flutter { 0%,100% { transform: rotate(-4deg) skewY(-5deg); } 50% { transform: rotate(8deg) skewY(8deg); } }
+@keyframes prop-arrival { from { translate: 0 -12px; opacity: .3; } to { translate: 0 0; opacity: 1; } }
+@keyframes line-arrival { from { opacity: .4; } to { opacity: 1; } }
+@keyframes collected-item { from { transform: translate(-50%, -50%) scale(1); opacity: 1; } to { left: 50%; top: 96%; transform: translate(-50%, -50%) scale(.45); opacity: 0; } }
+@media (max-width: 650px) {
+  .story-page .scene-art { aspect-ratio: 3 / 2; }
+  .current-story-line { min-height: 115px; }
+  .corner-mark { font-size: 23px; }
+  .blanket { top: 43%; height: 43%; }
+  .story-beats { gap: 4px 8px; }
+  .scene-caption { font-size: 9px; padding: 5px; }
+  .found-tray { gap: 6px; padding-inline: 8px; }
+  .found-tray > span { gap: 2px; }
+  .found-tray > span > svg:first-child { width: 25px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .wind-layer, .collect-flight { display: none; }
+}
+.reduce-motion .wind-layer, .reduce-motion .collect-flight { display: none; }

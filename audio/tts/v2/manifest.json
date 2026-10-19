@@ -1,0 +1,1053 @@
+[
+  {
+    "id": "v2_intro_0",
+    "speaker": "故事开始了",
+    "text": "维尼和小猪刚准备好野餐，一阵风就赶来了。",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_intro_0.wav",
+      "sha256": "2aa4909d04e7b023b62bab2243cfa559ce34edd037c6bdeca24e7f8e1ed4d37a"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.1,
+      "wav_before": {
+        "lufs": -22.9,
+        "true_peak_dbfs": -2.44
+      },
+      "mp3_after": {
+        "lufs": -23.46,
+        "true_peak_dbfs": -3.01
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "363fa061e9ffc9440a265618d4c4434bd7f91d3507f48fe253c6151a9b8137d7",
+        "bytes": 387150
+      },
+      "mp3": {
+        "sha256": "6a249c170ed81bb3af508f4cc199578c69ae2ba461f6be8605e79b790854d9f6",
+        "bytes": 65325
+      }
+    }
+  },
+  {
+    "id": "v2_intro_1",
+    "speaker": "风来过了",
+    "text": "餐巾飘远了，杯子滚到了路边，篮子也倒在草丛旁。",
+    "shot": 1,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_intro_1.wav",
+      "sha256": "6fe14e31ae5b2f83d0473e2c4c4fcc0f6ccb446abba4d984fa772c57038e5a6d"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -1.77,
+      "wav_before": {
+        "lufs": -21.23,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -3.7
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "d911b841712ad1736141ef25608c661bfc4c9bcf94a4755aecf801049ace62d8",
+        "bytes": 539214
+      },
+      "mp3": {
+        "sha256": "38cf8c47a162f72181f3ed5db61978b07c2b9649cab08def52466257ef38ae58",
+        "bytes": 90669
+      }
+    }
+  },
+  {
+    "id": "v2_intro_2",
+    "speaker": "维尼",
+    "text": "我想，杯子一定没有长脚。至少，刚才还没有。",
+    "shot": 2,
+    "voice": "维尼",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_intro_2.wav",
+      "sha256": "60f936172437004229d50b2ad58ac36a88d6a991b2f93f1f452128e751f30c4a"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -2.06,
+      "wav_before": {
+        "lufs": -20.94,
+        "true_peak_dbfs": -2.31
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -4.81
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "7122d91e5ecdec278a2e484a1fa73936b9fa6db59e41b7397ce31d188f6b5e7b",
+        "bytes": 626766
+      },
+      "mp3": {
+        "sha256": "996dfb16a9c5bf7d5bd424aa4b40e80d195371a40cc784808fde7e5a75cf404a",
+        "bytes": 105261
+      }
+    }
+  },
+  {
+    "id": "v2_intro_3",
+    "speaker": "小猪",
+    "text": "我们一起找找吧。",
+    "shot": 2,
+    "voice": "小猪",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_intro_3.wav",
+      "sha256": "a7b2fedc1d3899835c6d6cd45d7c134a4cf2df661e110cc109a0ddfda6a19500"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 0.0,
+      "wav_before": {
+        "lufs": -23.0,
+        "true_peak_dbfs": -8.16
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -8.6
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "a7b2fedc1d3899835c6d6cd45d7c134a4cf2df661e110cc109a0ddfda6a19500",
+        "bytes": 195918
+      },
+      "mp3": {
+        "sha256": "177a8e543dfd3b55b69f88991fbaddcaed0ba463c61d06bb8e96012d59ad6641",
+        "bytes": 33453
+      }
+    }
+  },
+  {
+    "id": "v2_find_0",
+    "speaker": "小猪",
+    "text": "杯子、餐巾，还有篮子。看看草丛和树根旁，点一点，把它们找回来吧。",
+    "shot": 0,
+    "voice": "小猪",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_find_0.wav",
+      "sha256": "2a519573059ef42c9491ba1e842b3abf09c629efc96b52e6fc1e721131087242"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -3.42,
+      "wav_before": {
+        "lufs": -19.58,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.46,
+        "true_peak_dbfs": -5.35
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "53899d7bba013e0c926f90a544ede5e169ca07a3ec6604cd3f6673e15d22e470",
+        "bytes": 896334
+      },
+      "mp3": {
+        "sha256": "893276fae69abc320559cb0ea743f592d2380591951bddf8b9cfbe623ad5bc40",
+        "bytes": 150189
+      }
+    },
+    "delivery_note": "字幕随交付录音使用“看看草丛和树根旁”的语序；任务语义不变。"
+  },
+  {
+    "id": "v2_wind-talk_0",
+    "speaker": "留一点时间给彼此",
+    "text": "东西找回来了。再看看周围，你从哪里看出风来过？是歪向一边的小草，还是晃动的叶子？",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_wind-talk_0.wav",
+      "sha256": "d268eeb2704933d82d680c3df896d01967884061d07e136de63df6c5094095ea"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 0.02,
+      "wav_before": {
+        "lufs": -23.51,
+        "true_peak_dbfs": -2.02
+      },
+      "mp3_after": {
+        "lufs": -23.93,
+        "true_peak_dbfs": -2.43
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "3c90ce901395d641b65d1848b8dae793acbb8a55ad65698bbf75aa9912acbb66",
+        "bytes": 1069134
+      },
+      "mp3": {
+        "sha256": "0a0948d6fb0b3bae9d56dcade5c3575196d78f68e60572551b331c89c4dece50",
+        "bytes": 178989
+      }
+    }
+  },
+  {
+    "id": "v2_walk_0",
+    "speaker": "小猪",
+    "text": "屹耳也许想和我们一起。",
+    "shot": 0,
+    "voice": "小猪",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_walk_0.wav",
+      "sha256": "cfdbbb6fcd34a34b83d3344a1b4f18094453da59f7749cada50d39530b7e2649"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 0.01,
+      "wav_before": {
+        "lufs": -23.01,
+        "true_peak_dbfs": -6.68
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -7.12
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "877e865ce31b641d0ef52d13b7f632332c3ac086d73fb64f7c78031cf6297b14",
+        "bytes": 262734
+      },
+      "mp3": {
+        "sha256": "84b4b35bfc66dcc1611c39e27e613028223423ba9120171a52958619cf0f68f2",
+        "bytes": 44589
+      }
+    }
+  },
+  {
+    "id": "v2_walk_1",
+    "speaker": "维尼",
+    "text": "好主意。我们给他留个位置。",
+    "shot": 0,
+    "voice": "维尼",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_walk_1.wav",
+      "sha256": "c93a3bf20fd973ab7e028a6fcc6061db9e781476529ec79516b4968d5350447b"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -1.46,
+      "wav_before": {
+        "lufs": -21.54,
+        "true_peak_dbfs": -6.08
+      },
+      "mp3_after": {
+        "lufs": -23.46,
+        "true_peak_dbfs": -7.98
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "3481e14dd8ee98333df0749d14d63a6131b4d5c732137ce9ca619aa4ae963a71",
+        "bytes": 311118
+      },
+      "mp3": {
+        "sha256": "80508132c666eae6722f25e974b881d7db7f83fc793f55292a931465494ed3d3",
+        "bytes": 52653
+      }
+    }
+  },
+  {
+    "id": "v2_walk_2",
+    "speaker": "轻轻往前走",
+    "text": "他们收好用品，沿着小路去找屹耳。风小了一点。",
+    "shot": 1,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_walk_2.wav",
+      "sha256": "ca4cbecd4eaf4245d0d40d217b1389cb54def3e04279e501c2bec5372d61309e"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.16,
+      "wav_before": {
+        "lufs": -22.84,
+        "true_peak_dbfs": -4.66
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -5.28
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "9c2d9437118078bc14a7a87973a4a03676cb082b4214e6593e584f2ae6462981",
+        "bytes": 682062
+      },
+      "mp3": {
+        "sha256": "e69b419af64c159821bf05dfcd99eb0edbd55b8d718e538e4c657127fc3f46ab",
+        "bytes": 114477
+      }
+    }
+  },
+  {
+    "id": "v2_worry_0",
+    "speaker": "小猪",
+    "text": "屹耳，要和我们一起野餐吗？",
+    "shot": 0,
+    "voice": "小猪",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_worry_0.wav",
+      "sha256": "bb8cb146979d08afc57afcb58588a77b229d229694da806d6876359448b2fcc4"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -1.16,
+      "wav_before": {
+        "lufs": -21.84,
+        "true_peak_dbfs": -4.09
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -5.69
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "e4344a5cbb8f40aa88a3c318ed59e93bb1a26da8a7558779632fc30a4aba884b",
+        "bytes": 290382
+      },
+      "mp3": {
+        "sha256": "272bf47d2d25640ddefc5703491ca3009b56cfc46c041e25898ee0169cce12b5",
+        "bytes": 49197
+      }
+    }
+  },
+  {
+    "id": "v2_worry_1",
+    "speaker": "屹耳",
+    "text": "谢谢。我只是想，风也许还会回来。到时候，垫子会飞，杯子会倒。",
+    "shot": 1,
+    "voice": "屹耳",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_worry_1.wav",
+      "sha256": "8e81905d87af351fb1468c9eabf10693833c55edd50cc75a0902afd76c262bec"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.5,
+      "wav_before": {
+        "lufs": -23.35,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -24.3,
+        "true_peak_dbfs": -2.45
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "c31961f033bb83a39629b3be12e8acb580e75d36182f84778c95350184122805",
+        "bytes": 866382
+      },
+      "mp3": {
+        "sha256": "e5f1ea3b9890778cc7557e12ac8da24f8776fb45b032de5da8508a7dbde69f56",
+        "bytes": 145197
+      }
+    }
+  },
+  {
+    "id": "v2_worry_2",
+    "speaker": "维尼",
+    "text": "嗯。那我们先不着急。",
+    "shot": 1,
+    "voice": "维尼",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_worry_2.wav",
+      "sha256": "34a2e6854fd2acbd0af1cab1135b1d454ffc8db894faf09dd08460b38cc1488c"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 0.0,
+      "wav_before": {
+        "lufs": -23.0,
+        "true_peak_dbfs": -8.49
+      },
+      "mp3_after": {
+        "lufs": -23.42,
+        "true_peak_dbfs": -8.91
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "34a2e6854fd2acbd0af1cab1135b1d454ffc8db894faf09dd08460b38cc1488c",
+        "bytes": 269646
+      },
+      "mp3": {
+        "sha256": "9bccc17425395126e4905f1559e74a141dd1ea096a4580807be14cd12f3934f9",
+        "bytes": 45741
+      }
+    }
+  },
+  {
+    "id": "v2_choice_0",
+    "speaker": "轮到你来决定",
+    "text": "我们可以先听他说说，也可以安静地陪他待一会儿。你想试哪一种？",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_choice_0.wav",
+      "sha256": "74e7e0eedf1d8bd902c9075ec21d9f9481f81423df4f385e22cdc68d697eee41"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 0.43,
+      "wav_before": {
+        "lufs": -23.43,
+        "true_peak_dbfs": -5.25
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -5.26
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "b32730f2f44b60f9c06ddae7639c20a2f48f7196c61397fe851145710a3087ab",
+        "bytes": 626766
+      },
+      "mp3": {
+        "sha256": "42841d008481c9c7059b6ec772df7ac3a440d5688c91f5ddf8df8dd1bcd591ab",
+        "bytes": 105261
+      }
+    }
+  },
+  {
+    "id": "v2_companion-talk_0",
+    "speaker": "家长也可以先说说",
+    "text": "如果是你，希望有人听一听，还是安静地陪一会儿？也可以有别的办法。不知道也没关系。",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_companion-talk_0.wav",
+      "sha256": "d2011210467547391f8f7b39f84bd1246f39110dc2e3f149645c2758023f3d73"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.1,
+      "wav_before": {
+        "lufs": -22.9,
+        "true_peak_dbfs": -2.1
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -2.64
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "ddb23bb967a19343813a3a79a40a46f893e58d00355cbb0e0abb40324d986fd5",
+        "bytes": 1108302
+      },
+      "mp3": {
+        "sha256": "b5abc0be73751be4f5519a9409ff30519b72d21abf0250e13421758d61eacc78",
+        "bytes": 185517
+      }
+    }
+  },
+  {
+    "id": "v2_stones_0",
+    "speaker": "绕到大树背风的一面",
+    "text": "他们绕到大树背风的一面，重新铺好垫子。",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_stones_0.wav",
+      "sha256": "de478784f687c57595d9604f7f7882ab5e372af614e743de68f8daa57496ebf3"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.85,
+      "wav_before": {
+        "lufs": -22.15,
+        "true_peak_dbfs": -5.31
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -6.6
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "3dd468fdc5e680dcbf5f3ccd4a32cc510a3a3783170d412ff14137ccef8b3f7e",
+        "bytes": 483918
+      },
+      "mp3": {
+        "sha256": "ae86348cb4228470e64c313707a97e5d0ca0dab571a95c59ace04f52ce6fc417",
+        "bytes": 81453
+      }
+    }
+  },
+  {
+    "id": "v2_stones_1",
+    "speaker": "小猪",
+    "text": "篮子压住了一角。再用三块石头，把另外三个角也固定好。",
+    "shot": 1,
+    "voice": "小猪",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_stones_1.wav",
+      "sha256": "d737f82c695ed98ad513c51ec61ccc0908e7875984ab6d0328fd8cf448f326ac"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -1.83,
+      "wav_before": {
+        "lufs": -21.17,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.48,
+        "true_peak_dbfs": -3.78
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "5d242a045fbf48b5589337eb7c258afebbd90b0991a56b710141a339693b190d",
+        "bytes": 578382
+      },
+      "mp3": {
+        "sha256": "2fba89346eea7e7364a8d0a93d245e6b00ae84dde1abf8d01f0c77183e40acb5",
+        "bytes": 97197
+      }
+    }
+  },
+  {
+    "id": "v2_picnic_0",
+    "speaker": "一起布置吧",
+    "text": "给每位朋友留一个位置。你摆一份，也可以请家长摆一份。再添一朵花、一片叶子，就是你们的小小野餐。",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_picnic_0.wav",
+      "sha256": "53f9ddaa2e0d15e38b8ebc1cd2a6035b76a498342a6791864fbf4dddeed02f42"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.21,
+      "wav_before": {
+        "lufs": -22.79,
+        "true_peak_dbfs": -3.6
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -4.23
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "4a2827f08657a014b5506931c5a55fd88e966ef5d3fd09e8975575fbe7f55a3b",
+        "bytes": 1202766
+      },
+      "mp3": {
+        "sha256": "50703f9ddfb39f57b9d96c96b9a5823d770a41e28578f42ba481c08136ff9e52",
+        "bytes": 201261
+      }
+    }
+  },
+  {
+    "id": "v2_ending_0",
+    "speaker": "小猪",
+    "text": "风又来了。看，垫子没有跑！",
+    "shot": 0,
+    "voice": "小猪",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_ending_0.wav",
+      "sha256": "11fc3d59232a6f6e930328ba0ecdd47b258b184acb89ea74bd24b5f7cb06f083"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.01,
+      "wav_before": {
+        "lufs": -22.99,
+        "true_peak_dbfs": -6.08
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -6.53
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "c646c331c0dd2b996d1937339e9f71d22705b20a3e502ebe5be666a95e6aeea5",
+        "bytes": 269646
+      },
+      "mp3": {
+        "sha256": "b9c93444a6cdc22a43bde5d0fe30e7c6b8da5f9272c1f7b4a4d780e0f984ccc8",
+        "bytes": 45741
+      }
+    }
+  },
+  {
+    "id": "v2_ending_1",
+    "speaker": "屹耳",
+    "text": "风还在。不过，这里挺好的。",
+    "shot": 1,
+    "voice": "屹耳",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_ending_1.wav",
+      "sha256": "fe38dccca4cd1942345f9c60d9b738ec27bc44a65762f43993cf434bcf0d4bd3"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.78,
+      "wav_before": {
+        "lufs": -22.22,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -2.7
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "60f88449eef6408dbdea75ed97d7687377fc882b1029efeadf522debd4b741a9",
+        "bytes": 290382
+      },
+      "mp3": {
+        "sha256": "0f5d30986cfdeade9a977675be3ade31d91709f3a8bd6aed4be1775b2d99010b",
+        "bytes": 49197
+      }
+    }
+  },
+  {
+    "id": "v2_ending_2",
+    "speaker": "维尼",
+    "text": "嗯。朋友在旁边，东西也不用追了。",
+    "shot": 1,
+    "voice": "维尼",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_ending_2.wav",
+      "sha256": "6549274fe39e4888e7f4b844d595b920a3a82ea4d6fd962e152c7d1aba280bc2"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -1.72,
+      "wav_before": {
+        "lufs": -21.28,
+        "true_peak_dbfs": -6.32
+      },
+      "mp3_after": {
+        "lufs": -23.46,
+        "true_peak_dbfs": -8.5
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "7950ce51f7226e869451bc5a2417910d930eec7b30cb295ee996d8a92047cf24",
+        "bytes": 417102
+      },
+      "mp3": {
+        "sha256": "7e5dbf528993efa00c24720aed87dd3c3f012105713817e9ca8fe17654b1bca4",
+        "bytes": 70317
+      }
+    }
+  },
+  {
+    "id": "v2_ending_3",
+    "speaker": "故事的最后",
+    "text": "这一天没有完全照计划发生。不过，他们还是一起开始了野餐。",
+    "shot": 1,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_ending_3.wav",
+      "sha256": "fb399b683a3b7f6b47d3788dce0b836175d727a1a8af5d0af26de2cfb426f0e4"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 1.25,
+      "wav_before": {
+        "lufs": -24.25,
+        "true_peak_dbfs": -5.59
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -4.78
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "cef134f32a454857b456eeb8e7b3d88e237762783af69e58a30ceb056fc8e0ed",
+        "bytes": 635982
+      },
+      "mp3": {
+        "sha256": "94a03ae89b7b3a71b2a55bdcce4bb163a41451493ee5656cf846e133c94b295f",
+        "bytes": 106797
+      }
+    }
+  },
+  {
+    "id": "v2_diary_0",
+    "speaker": "一起完成的一天",
+    "text": "今天，我们找回了野餐用品，也让垫子稳稳地留在原地。每位朋友，都有了自己的位置。",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_diary_0.wav",
+      "sha256": "0b30b4e7c3d56b482b19e145ebc41cc7a9d9f59bf078736fb8a2c132e96ad9ea"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 0.51,
+      "wav_before": {
+        "lufs": -23.51,
+        "true_peak_dbfs": -3.4
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -3.38
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "545c66e5323fd9854a7d0f106ef960c6f72b9e779191e5c6ea788576b9c4abee",
+        "bytes": 866382
+      },
+      "mp3": {
+        "sha256": "eee8b101c9382e98de5811782759e7862d17b38364c70d986f9d21745430f904",
+        "bytes": 145197
+      }
+    }
+  },
+  {
+    "id": "v2_response_listen_0",
+    "speaker": "维尼",
+    "text": "你愿意告诉我们，最担心什么吗？",
+    "shot": 0,
+    "voice": "维尼",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_response_listen_0.wav",
+      "sha256": "e19dd42761018527f8d40ad994bf93a16c197fbc90bf1bad25364c670bc1dc9f"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -1.03,
+      "wav_before": {
+        "lufs": -21.97,
+        "true_peak_dbfs": -4.97
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -6.45
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "0ea2aec95dee8dcad77c528b359e0dd6a2ea0a770d0bab0f11843454e63b8f41",
+        "bytes": 435534
+      },
+      "mp3": {
+        "sha256": "b469aece9b4cca107f6df95d18056e339be2305489e4cd7f90965f903bc9fe7a",
+        "bytes": 73389
+      }
+    }
+  },
+  {
+    "id": "v2_response_listen_1",
+    "speaker": "屹耳",
+    "text": "我不想刚铺好垫子，就又得追着它跑。",
+    "shot": 1,
+    "voice": "屹耳",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_response_listen_1.wav",
+      "sha256": "f0e313994c8808071db5689a7e82d7cb5949f47a60a4988e87949e4060e5a691"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.69,
+      "wav_before": {
+        "lufs": -22.31,
+        "true_peak_dbfs": -4.0
+      },
+      "mp3_after": {
+        "lufs": -23.46,
+        "true_peak_dbfs": -5.16
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "dfc9c6b64f95c73b168393058cd7a4a69a2238bc2b6f4f880a3d328e07915a79",
+        "bytes": 387150
+      },
+      "mp3": {
+        "sha256": "da9a80b225a38d08e51df636c160dc1ec12b1475f7438aefcb7196cae418c077",
+        "bytes": 65325
+      }
+    }
+  },
+  {
+    "id": "v2_response_listen_2",
+    "speaker": "小猪",
+    "text": "那我们想想，怎么让垫子待在原地。",
+    "shot": 1,
+    "voice": "小猪",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_response_listen_2.wav",
+      "sha256": "cbab7936c890f8aaf8d69e76b72581be07b148be7af63b802457b8b46ab87571"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -2.38,
+      "wav_before": {
+        "lufs": -20.62,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.47,
+        "true_peak_dbfs": -4.32
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "f3ec80e956b2f1f18a133a70fb300e331842a16671514070d00d664be61ac0b9",
+        "bytes": 387150
+      },
+      "mp3": {
+        "sha256": "6ca3762d98de305e951fe69fb94626084dd6854dbcde47526708dcdcd9e33e83",
+        "bytes": 65325
+      }
+    }
+  },
+  {
+    "id": "v2_response_stay_0",
+    "speaker": "安静地待一会儿",
+    "text": "他们留在屹耳旁边。没有谁急着说下一句话。",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/v2_response_stay_0.wav",
+      "sha256": "a811efb106a91caa00b24db9342ef8d59275ba82eb9298c9606ef4f669a2148d"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.31,
+      "wav_before": {
+        "lufs": -22.69,
+        "true_peak_dbfs": -6.33
+      },
+      "mp3_after": {
+        "lufs": -23.45,
+        "true_peak_dbfs": -7.11
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "c9fc2c564c4bd44f97970732c667f644c03347c1dbc8c3ece2627cb23108c4a2",
+        "bytes": 723534
+      },
+      "mp3": {
+        "sha256": "3f09a9a5e7b046ec21ae73132ce7dfe0ce8aae108db3fbdbbd95c2f985dc314f",
+        "bytes": 121389
+      }
+    }
+  },
+  {
+    "id": "v2_response_stay_1",
+    "speaker": "屹耳",
+    "text": "谢谢你们等我。也许，我们可以先把垫子压住。",
+    "shot": 1,
+    "voice": "屹耳",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-followup-recordings/v2_response_stay_1.wav",
+      "sha256": "c6f644bf05aa45289bf26d75e5d715b355013e887e4cb9faf4b54fed6187a504"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -1.87,
+      "wav_before": {
+        "lufs": -21.13,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.36,
+        "true_peak_dbfs": -3.78
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "edda4124a114be20f7b99f4e07349ea08af4e769e3c053db0f9c8a42dd12161f",
+        "bytes": 675150
+      },
+      "mp3": {
+        "sha256": "15806cf785e3985c65fe8603ee3b1e77a249fb0ae7a02042ceab062ecf4cc937",
+        "bytes": 113325
+      }
+    }
+  },
+  {
+    "id": "optional_stones_complete",
+    "speaker": "屹耳",
+    "text": "现在看起来，好像可以安心待一会儿了。",
+    "shot": 1,
+    "voice": "屹耳",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/optional_stones_complete.wav",
+      "sha256": "2df4be80084263b446c6345e4c4c91cfea8189653a8067e3fbf0fc33614ec98e"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.62,
+      "wav_before": {
+        "lufs": -22.38,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.47,
+        "true_peak_dbfs": -2.57
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "cc660e5841b81c7e9ac10622e807e43a4db85330a7ab89a74f2faa0cac393d17",
+        "bytes": 338766
+      },
+      "mp3": {
+        "sha256": "a384b32311f6e8ff3bbc79ca13ad5ef3da0ff44645d0576288d7a3128e22cdd7",
+        "bytes": 57261
+      }
+    }
+  },
+  {
+    "id": "ui_choice_listen",
+    "speaker": "旁白",
+    "text": "先听他说说。你愿意告诉我们，最担心什么吗？",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/ui_choice_listen.wav",
+      "sha256": "ae530f35426adef912fc908f71e21e174fb24076ba2cdefe6def88323d8b62a6"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": 0.59,
+      "wav_before": {
+        "lufs": -23.59,
+        "true_peak_dbfs": -4.41
+      },
+      "mp3_after": {
+        "lufs": -23.44,
+        "true_peak_dbfs": -4.27
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "956b15756fe9c02ae23d21d5c4eff8b145db376cb043a586377f8c3a3f328ee3",
+        "bytes": 539214
+      },
+      "mp3": {
+        "sha256": "0008d27e6eb318eeea1c7d0279dff56b5d00b76b3f15e336a83219345e2cc687",
+        "bytes": 90669
+      }
+    }
+  },
+  {
+    "id": "ui_choice_stay",
+    "speaker": "旁白",
+    "text": "在旁边陪一会儿。不用着急，我们就在这里。",
+    "shot": 0,
+    "voice": "旁白",
+    "provisional": false,
+    "source": {
+      "kind": "rerecorded",
+      "file": "audio/tts/archive/v2-before-formal-integration/ui_choice_stay.wav",
+      "sha256": "f6f0b7195e3e996106cb01e1317d2ba48fe207e409357ee7180aa13e470b47f2"
+    },
+    "processing": {
+      "target_lufs": -23,
+      "gain_db": -0.5,
+      "wav_before": {
+        "lufs": -23.01,
+        "true_peak_dbfs": -1.5
+      },
+      "mp3_after": {
+        "lufs": -23.95,
+        "true_peak_dbfs": -2.44
+      }
+    },
+    "files": {
+      "wav": {
+        "sha256": "1288d177a63d6db77b52e329f8fad70a8071c56d0bb18321a4f895575ea07abf",
+        "bytes": 483918
+      },
+      "mp3": {
+        "sha256": "20a3476ccabe5797858d7f91403265b29f509a18dedbfee34a686786649be165",
+        "bytes": 81453
+      }
+    }
+  }
+]

@@ -1,0 +1,254 @@
+[
+  {
+    "browser": "chromium",
+    "decoded": [
+      {
+        "id": "v2_intro_0",
+        "duration": 4.032
+      },
+      {
+        "id": "v2_intro_1",
+        "duration": 5.616
+      },
+      {
+        "id": "v2_intro_2",
+        "duration": 6.528
+      },
+      {
+        "id": "v2_intro_3",
+        "duration": 2.04
+      },
+      {
+        "id": "v2_find_0",
+        "duration": 9.336
+      },
+      {
+        "id": "v2_wind-talk_0",
+        "duration": 11.136
+      },
+      {
+        "id": "v2_walk_0",
+        "duration": 2.736
+      },
+      {
+        "id": "v2_walk_1",
+        "duration": 3.24
+      },
+      {
+        "id": "v2_walk_2",
+        "duration": 7.104
+      },
+      {
+        "id": "v2_worry_0",
+        "duration": 3.024
+      },
+      {
+        "id": "v2_worry_1",
+        "duration": 9.024
+      },
+      {
+        "id": "v2_worry_2",
+        "duration": 2.808
+      },
+      {
+        "id": "v2_choice_0",
+        "duration": 6.528
+      },
+      {
+        "id": "v2_companion-talk_0",
+        "duration": 11.544
+      },
+      {
+        "id": "v2_stones_0",
+        "duration": 5.04
+      },
+      {
+        "id": "v2_stones_1",
+        "duration": 6.024
+      },
+      {
+        "id": "v2_picnic_0",
+        "duration": 12.528
+      },
+      {
+        "id": "v2_ending_0",
+        "duration": 2.808
+      },
+      {
+        "id": "v2_ending_1",
+        "duration": 3.024
+      },
+      {
+        "id": "v2_ending_2",
+        "duration": 4.344
+      },
+      {
+        "id": "v2_ending_3",
+        "duration": 6.624
+      },
+      {
+        "id": "v2_diary_0",
+        "duration": 9.024
+      },
+      {
+        "id": "v2_response_listen_0",
+        "duration": 4.536
+      },
+      {
+        "id": "v2_response_listen_1",
+        "duration": 4.032
+      },
+      {
+        "id": "v2_response_listen_2",
+        "duration": 4.032
+      },
+      {
+        "id": "v2_response_stay_0",
+        "duration": 7.536
+      },
+      {
+        "id": "v2_response_stay_1",
+        "duration": 7.032
+      },
+      {
+        "id": "optional_stones_complete",
+        "duration": 3.528
+      },
+      {
+        "id": "ui_choice_listen",
+        "duration": 5.616
+      },
+      {
+        "id": "ui_choice_stay",
+        "duration": 5.04
+      }
+    ],
+    "pageErrors": []
+  },
+  {
+    "browser": "webkit",
+    "decoded": [
+      {
+        "id": "v2_intro_0",
+        "duration": 4.056
+      },
+      {
+        "id": "v2_intro_1",
+        "duration": 5.64
+      },
+      {
+        "id": "v2_intro_2",
+        "duration": 6.552
+      },
+      {
+        "id": "v2_intro_3",
+        "duration": 2.064
+      },
+      {
+        "id": "v2_find_0",
+        "duration": 9.36
+      },
+      {
+        "id": "v2_wind-talk_0",
+        "duration": 11.16
+      },
+      {
+        "id": "v2_walk_0",
+        "duration": 2.76
+      },
+      {
+        "id": "v2_walk_1",
+        "duration": 3.264
+      },
+      {
+        "id": "v2_walk_2",
+        "duration": 7.128
+      },
+      {
+        "id": "v2_worry_0",
+        "duration": 3.048
+      },
+      {
+        "id": "v2_worry_1",
+        "duration": 9.048
+      },
+      {
+        "id": "v2_worry_2",
+        "duration": 2.832
+      },
+      {
+        "id": "v2_choice_0",
+        "duration": 6.552
+      },
+      {
+        "id": "v2_companion-talk_0",
+        "duration": 11.568
+      },
+      {
+        "id": "v2_stones_0",
+        "duration": 5.064
+      },
+      {
+        "id": "v2_stones_1",
+        "duration": 6.048
+      },
+      {
+        "id": "v2_picnic_0",
+        "duration": 12.552
+      },
+      {
+        "id": "v2_ending_0",
+        "duration": 2.832
+      },
+      {
+        "id": "v2_ending_1",
+        "duration": 3.048
+      },
+      {
+        "id": "v2_ending_2",
+        "duration": 4.368
+      },
+      {
+        "id": "v2_ending_3",
+        "duration": 6.648
+      },
+      {
+        "id": "v2_diary_0",
+        "duration": 9.048
+      },
+      {
+        "id": "v2_response_listen_0",
+        "duration": 4.56
+      },
+      {
+        "id": "v2_response_listen_1",
+        "duration": 4.056
+      },
+      {
+        "id": "v2_response_listen_2",
+        "duration": 4.056
+      },
+      {
+        "id": "v2_response_stay_0",
+        "duration": 7.56
+      },
+      {
+        "id": "v2_response_stay_1",
+        "duration": 7.056
+      },
+      {
+        "id": "optional_stones_complete",
+        "duration": 3.552
+      },
+      {
+        "id": "ui_choice_listen",
+        "duration": 5.64
+      },
+      {
+        "id": "ui_choice_stay",
+        "duration": 5.064
+      }
+    ],
+    "pageErrors": []
+  }
+]
