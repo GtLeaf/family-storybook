@@ -1,6 +1,10 @@
 import type { CompanionChoice, Friend, Stage } from "./story";
 
-export type Actor = { friend: Friend; x: number; y: number; width: number; facing: "left" | "right"; motion?: "walk" | "arrive" };
+type ActorPosition = { x: number; y: number; width: number };
+export type Actor = ActorPosition & {
+  friend: Friend; facing: "left" | "right"; motion?: "walk" | "arrive";
+  journey?: { start: ActorPosition; bend: ActorPosition; approach: ActorPosition };
+};
 export type Shot = { caption: string; camera?: "wide" | "props" | "donkey"; actors: Actor[] };
 const bear = (x: number, y = 78, width = 13, facing: Actor["facing"] = "left", motion?: Actor["motion"]): Actor => ({ friend: "bear", x, y, width, facing, motion });
 const pig = (x: number, y = 78, width = 11, facing: Actor["facing"] = "left", motion?: Actor["motion"]): Actor => ({ friend: "pig", x, y, width, facing, motion });
@@ -19,7 +23,18 @@ export function storyboard(stage: Stage, choice: CompanionChoice | null): Shot[]
     case "find": case "wind-talk": return [{ caption: "风留下了哪些小线索？", actors: [bear(47, 77, 11, "right"), pig(62, 72, 10)] }];
     case "walk": return [
       { caption: "大树旁，还有一位朋友", actors: [bear(39, 92, 14, "right"), pig(58, 92, 12)] },
-      { caption: "沿着小路，去找屹耳", actors: [bear(55, 76, 11, "right", "walk"), pig(70, 75, 9, "right", "walk")] },
+      { caption: "沿着弯弯的小路，慢慢走到大树旁", actors: [
+        { ...bear(68, 43.5, 4.7, "right", "walk"), journey: {
+          start: { x: 39, y: 92, width: 14 },
+          bend: { x: 45, y: 62, width: 9.5 },
+          approach: { x: 58, y: 48, width: 6.2 },
+        } },
+        { ...pig(72, 44.5, 4, "right", "walk"), journey: {
+          start: { x: 58, y: 92, width: 12 },
+          bend: { x: 51, y: 63, width: 8.1 },
+          approach: { x: 63, y: 49, width: 5.3 },
+        } },
+      ] },
     ];
     case "worry": return [
       { caption: "屹耳在树旁，两位朋友轻轻走近", actors: [donkey(), pig(61, 78, 11, "left", "arrive"), bear(78, 78, 13, "left", "arrive")] },

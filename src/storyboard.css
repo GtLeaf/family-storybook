@@ -13,6 +13,14 @@
 .actor-speaking { animation: paper-speak 1.6s ease-in-out infinite; }
 .actor-walk .actor-body { animation: paper-walk .55s ease-in-out 5; }
 .actor-pig.actor-walk .actor-body { animation-duration: .42s; animation-iteration-count: 6; }
+/* 路径坐标来自分镜：近处 → 道路左弯 → 树前右弯 → 树根旁。
+   脚底锚点和宽度一起插值，保留同一段动画供暂停/继续使用。 */
+.scene-walk .scene-actor { transition: none; }
+.scene-walk .actor-path { animation: forest-path 6.6s linear both; }
+.scene-walk .actor-walk .actor-body { animation: paper-walk .55s ease-in-out 12; }
+.scene-walk .actor-pig.actor-walk .actor-body { animation-duration: .44s; animation-iteration-count: 15; }
+.actor-carried-basket { position: absolute; left: 42%; bottom: 5%; width: 78%; }
+.actor-carried-basket > svg { display: block; width: 100%; height: auto; }
 .actor-arrive .actor-facing { animation: paper-arrive 1.8s ease-out both; }
 .storyboard-scene > img { transition: transform .65s ease; }
 .camera-props > img, .camera-props > .scene-cast { transform: scale(1.12); transform-origin: 58% 76%; }
@@ -24,9 +32,6 @@
 .wind-leaf-1 { top: 53%; animation-delay: .9s; width: 3%; }
 .wind-leaf-2 { top: 39%; animation-delay: 1.4s; width: 2.5%; }
 .quiet-wind .wind-leaf { animation-duration: 6s; }
-.travel-basket { position: absolute; left: 37%; top: 77%; width: 12%; transition: left 2.5s ease-in-out, top 2.5s ease-in-out, width 2.5s ease-in-out; pointer-events: none; }
-.travel-basket > svg { width: 100%; height: auto; }
-.travel-shot-1 { left: 53%; top: 65%; width: 9%; }
 .gathered-props { position: absolute; left: 37%; top: 72%; display: flex; width: 26%; align-items: flex-end; }
 .gathered-props > svg { width: 38%; height: auto; margin-left: -5%; }
 .story-beats { display: flex; align-items: center; flex-wrap: wrap; gap: 5px 12px; margin: 8px 0 12px; border-top: 1px solid var(--line); }
@@ -82,7 +87,13 @@
 .story-paused *, .story-paused *::before, .story-paused *::after { animation-play-state: paused !important; }
 .cast-still .actor-body, .cast-still .actor-facing { animation: none !important; }
 @keyframes paper-speak { 0%,100% { transform: rotate(0); } 35% { transform: rotate(-1.3deg) translateY(-1%); } 70% { transform: rotate(.7deg); } }
-@keyframes paper-walk { 0%,100% { transform: rotate(-2deg); } 50% { transform: rotate(2deg) translateY(-2%); } }
+@keyframes paper-walk { 0%,100% { transform: rotate(0); } 25% { transform: rotate(-2deg) translateY(-1%); } 75% { transform: rotate(2deg) translateY(-2%); } }
+@keyframes forest-path {
+  0% { left: var(--path-start-x); top: var(--path-start-y); width: var(--path-start-width); animation-timing-function: ease-in; }
+  42% { left: var(--path-bend-x); top: var(--path-bend-y); width: var(--path-bend-width); }
+  76% { left: var(--path-approach-x); top: var(--path-approach-y); width: var(--path-approach-width); animation-timing-function: ease-out; }
+  100% { left: var(--path-end-x); top: var(--path-end-y); width: var(--path-end-width); }
+}
 @keyframes paper-arrive { from { translate: 30% 0; } to { translate: 0 0; } }
 @keyframes leaf-passing { 0% { left: -8%; opacity: 0; transform: rotate(-20deg); } 12% { opacity: .7; } 85% { opacity: .6; } 100% { left: 110%; opacity: 0; transform: translateY(50%) rotate(100deg); } }
 @keyframes corner-flutter { 0%,100% { transform: rotate(-4deg) skewY(-5deg); } 50% { transform: rotate(8deg) skewY(8deg); } }

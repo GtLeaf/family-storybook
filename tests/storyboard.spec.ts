@@ -50,6 +50,58 @@ test("页内镜头、手动讲述与角色出场顺序", async ({ page }) => {
   expect(errors).toEqual([]);
 });
 
+test("远行沿弯道缩小抵达树旁，支持暂停、重看和减少动态", async ({ page }) => {
+  await arrive(page);
+  const actors = page.locator(".scene-walk .scene-actor");
+  const positions = () => actors.evaluateAll(nodes => nodes.map(node => {
+    const actor = node.getBoundingClientRect();
+    const scene = node.closest(".scene-art")!.getBoundingClientRect();
+    return { x: (actor.x + actor.width / 2 - scene.x) / scene.width,
+      feet: (actor.bottom - scene.y) / scene.height, width: actor.width / scene.width };
+  }));
+  const near = await positions();
+  await click(page, "看完整画面");
+  await expect(page.locator(".actor-path")).toHaveCount(2);
+  await actors.evaluateAll(nodes => nodes.forEach(node => {
+    node.getAnimations().forEach(animation => { animation.currentTime = 3000; });
+  }));
+  await click(page, "歇一会儿");
+  await expect(actors.first()).toHaveCSS("animation-play-state", "paused");
+  await expect(actors.first().locator(".actor-body")).toHaveCSS("animation-play-state", "paused");
+  await expect(actors.first().locator(".actor-body")).toHaveCSS("animation-name", "paper-walk");
+  const paused = await positions();
+  await page.waitForTimeout(150);
+  expect(await positions()).toEqual(paused);
+  await click(page, "继续故事");
+  await expect(actors.first()).toHaveCSS("animation-play-state", "running");
+  const middle = await positions();
+  await actors.evaluateAll(nodes => nodes.forEach(node => {
+    node.getAnimations().forEach(animation => { animation.finish(); });
+  }));
+  const far = await positions();
+  for (const i of [0, 1]) {
+    expect(middle[i].feet).toBeLessThan(near[i].feet);
+    expect(middle[i].width).toBeLessThan(near[i].width);
+    expect(far[i].x).toBeGreaterThan(.64);
+    expect(far[i].x).toBeLessThan(.76);
+    expect(far[i].feet).toBeGreaterThan(.40);
+    expect(far[i].feet).toBeLessThan(.47);
+    expect(far[i].width).toBeLessThan(near[i].width * .4);
+  }
+  const basket = page.locator(".actor-bear .actor-carried-basket");
+  await expect(basket).toBeVisible();
+  await page.screenshot({ path: `test-results/walk-tree-${test.info().project.name}.png`, fullPage: true });
+  await click(page, "重看这一幕");
+  expect(await positions()).toEqual(near);
+  await click(page, "看完整画面");
+  expect((await positions())[0].width).toBeGreaterThan(far[0].width * 2);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(actors.first()).toHaveCSS("animation-name", "none");
+  expect(await positions()).toEqual(far);
+  await click(page, "去大树旁");
+  await expect(page.locator(".actor-donkey")).toHaveCount(1);
+});
+
 test("陪伴分支画面不同，讨论继承站位，重新选择会更新画面", async ({ page }) => {
   await arrive(page);
   await click(page, "去大树旁");

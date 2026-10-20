@@ -576,7 +576,7 @@ export default function App() {
                     <StoryScene key={progress.stage} stage={progress.stage} choice={progress.choice}
                       shot={shotIndex} speaker={currentLine.speaker}
                       speaking={narrating && speechStatus === "speaking"}
-                      still={paused || settings.reducedMotion} />
+                      still={settings.reducedMotion} />
                   )}
                   {progress.stage === "find" && (
                     <div className="found-tray">
