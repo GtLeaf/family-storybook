@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { RotateCcw } from "lucide-react";
 import type { Art } from "../content/story";
+import { artworkUrl } from "../lib/artwork";
 
 export function SceneArt({
   art,
@@ -22,7 +23,7 @@ export function SceneArt({
       {!failed && (
         <img
           key={`${art}-${attempt}`}
-          src={`${import.meta.env.BASE_URL}art/${art}.webp${attempt ? `?retry=${attempt}` : ""}`}
+          src={artworkUrl(art, attempt)}
           alt={alt}
           draggable={false}
           fetchPriority={priority ? "high" : "auto"}

@@ -14,6 +14,7 @@ import { FriendPortrait, Prop } from "./Illustrations";
 import { SceneArt } from "./SceneArt";
 import { Cast, PicnicCast, Wind } from "./StoryScene";
 import { storyboard } from "../content/storyboard";
+import { artworkUrl } from "../lib/artwork";
 
 type BoardProps = {
   progress: Progress;
@@ -79,7 +80,7 @@ export function FindBoard({
           <path d="M1060 880 1065 720 1080 770 1090 700 1105 770 1125 715 1130 785 1160 760 1170 710 1180 780 1210 680 1200 790 1250 725 1220 810 1270 800 1300 880Z" />
           <path d="M1200 300 1450 300 1450 360 1400 360 1350 340 1320 355 1290 345 1230 360 1200 350Z" />
         </clipPath></defs>
-        <image href={`${import.meta.env.BASE_URL}art/search.webp`} width="1536" height="1024" clipPath="url(#search-grass-mask)" />
+        <image href={artworkUrl("search")} width="1536" height="1024" clipPath="url(#search-grass-mask)" />
       </svg>
       <span className="scene-caption">
         <Sparkles size={14} /> 小发现，藏在不远的地方

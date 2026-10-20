@@ -45,6 +45,7 @@ import {
 } from "./lib/settings";
 import { narrationAudio, storyLines, type AudioSequence } from "./content/audio";
 import { useStoryAudio, type AudioCues } from "./lib/useStoryAudio";
+import { preloadArtwork, sceneArtwork, upcomingArtwork } from "./lib/artwork";
 import {
   BotanicalSprig,
   Prop,
@@ -211,10 +212,18 @@ export default function App() {
     hint,
   ]);
   useEffect(() => {
-    if (screen !== "story") return;
-    const image = new Image();
-    image.src = `${import.meta.env.BASE_URL}art/discovery.webp`;
-  }, [screen]);
+    if (screen !== "home" && screen !== "story") return;
+    const controller = new AbortController();
+    const { signal } = controller;
+    void (async () => {
+      // 先让当前画面完成，再利用封面停留/阅读时间准备下一幕。
+      await preloadArtwork(screen === "home" ? ["cover"] : sceneArtwork(progress.stage), { priority: "high", signal });
+      await preloadArtwork(screen === "home"
+        ? [...sceneArtwork(progress.stage), ...sceneArtwork("intro")]
+        : upcomingArtwork(progress.stage), { signal });
+    })();
+    return () => controller.abort();
+  }, [screen, progress.stage]);
 
   const feedback = (text: string, audio: AudioSequence) => {
     setFeedbackText(text);

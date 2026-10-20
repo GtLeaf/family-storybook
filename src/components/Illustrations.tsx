@@ -1,5 +1,6 @@
 import { useId, useState } from "react";
 import type { Friend, Item } from "../content/story";
+import { artworkUrl } from "../lib/artwork";
 
 export function FriendPortrait({
   friend,
@@ -13,7 +14,7 @@ export function FriendPortrait({
     return (
       <svg className={className} viewBox={`0 0 100 ${friend === "donkey" ? 63.27 : friend === "bear" ? 250.65 : 169.55}`} aria-hidden="true">
         <image
-          href={`${import.meta.env.BASE_URL}art/${friend}.webp`}
+          href={artworkUrl(friend)}
           width="100"
           height={friend === "donkey" ? 63.27 : friend === "bear" ? 250.65 : 169.55}
           preserveAspectRatio="xMidYMax meet"

@@ -9,8 +9,8 @@ const backgrounds = {
 };
 for (const [name, source] of Object.entries(backgrounds)) {
   await sharp(`docs/assets/scene-exploration/${source}.png`)
-    .resize({ width: 1440, withoutEnlargement: true })
-    .webp({ quality: 84 })
+    .resize({ width: 960, withoutEnlargement: true })
+    .webp({ quality: 72, effort: 6 })
     .toFile(`public/art/${name}.webp`);
 }
 const characters = {
@@ -21,7 +21,7 @@ const characters = {
 for (const [name, source] of Object.entries(characters)) {
   await sharp(`asset/role/${source}.png`)
     .trim({ threshold: 35 })
-    .resize({ height: 720, withoutEnlargement: true })
-    .webp({ quality: 85, alphaQuality: 100 })
+    .resize({ width: 640, height: 480, fit: "inside", withoutEnlargement: true })
+    .webp({ quality: 78, alphaQuality: 95, effort: 6 })
     .toFile(`public/art/${name}.webp`);
 }
