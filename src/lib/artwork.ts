@@ -45,7 +45,7 @@ function warmImage(art: Artwork, priority: "high" | "low"): Promise<boolean> {
       resolve(false);
     };
     image.onerror = failed;
-    image.onload = () => { void image.decode().then(() => resolve(true), failed); };
+    image.onload = () => { if (image.decode) void image.decode().then(() => resolve(true), failed); else resolve(true); };
   });
   images.set(url, { image, ready });
   image.src = url;

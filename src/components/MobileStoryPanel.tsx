@@ -20,7 +20,8 @@ export function MobileStoryCaption({ lines, activeLine, fraction, reducedMotion,
     // 长段落从头读起，随录音进度向上推；短段落完整进入视野。
     const top = Math.min(max, current.offsetTop + Math.max(0, current.offsetHeight - box.clientHeight) * fraction);
     userScrolling.current = false;
-    box.scrollTo({ top: Math.max(0, top), behavior });
+    if (box.scrollTo) box.scrollTo({ top: Math.max(0, top), behavior });
+    else box.scrollTop = Math.max(0, top);
   }, [activeLine, fraction]);
 
   const latestFollow = useRef(followCurrent);
@@ -29,9 +30,14 @@ export function MobileStoryCaption({ lines, activeLine, fraction, reducedMotion,
     if (following.current) followCurrent(reducedMotion ? "instant" : "smooth");
   }, [followCurrent, reducedMotion]);
   useLayoutEffect(() => {
-    const observer = new ResizeObserver(() => {
+    const resized = () => {
       if (following.current) latestFollow.current("instant");
-    });
+    };
+    if (typeof ResizeObserver !== "function") {
+      window.addEventListener("resize", resized);
+      return () => window.removeEventListener("resize", resized);
+    }
+    const observer = new ResizeObserver(resized);
     if (viewport.current) observer.observe(viewport.current);
     return () => observer.disconnect();
   }, []);
@@ -44,7 +50,7 @@ export function MobileStoryCaption({ lines, activeLine, fraction, reducedMotion,
     userScrolling.current = true;
     setBrowsing(true);
     // 取消仍在进行的自动滚动，避免拖回当前句。
-    box.scrollTo({ top: box.scrollTop, behavior: "instant" });
+    if (box.scrollTo) box.scrollTo({ top: box.scrollTop, behavior: "instant" });
   };
 
   return <section className="mobile-caption" aria-label="当前页故事文字">

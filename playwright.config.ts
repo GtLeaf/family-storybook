@@ -1,6 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
+  testIgnore: "xhs-platform.spec.ts",
   fullyParallel: true,
   timeout: 45000,
   expect: { timeout: 8000 },

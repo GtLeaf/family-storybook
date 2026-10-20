@@ -1,3 +1,5 @@
+import { isXhs } from "./lib/distribution";
+import { storageWarning } from "./xhs/storage";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   ArrowLeft,
@@ -78,13 +80,13 @@ export default function App() {
   const [hint, setHint] = useState(0);
   const [feedbackText, setFeedbackText] = useState("");
   const [storageNotice, setStorageNotice] = useState(
-    loaded.status === "invalid"
+    storageWarning || (loaded.status === "invalid"
       ? "这份进度暂时读不出来，原记录已保留。重新开始前会请你确认。"
       : loaded.status === "recovered"
         ? "已从上一份备份恢复进度，可能需要重做刚才的小操作。"
         : loaded.status === "unavailable"
           ? "这个浏览器暂时不能保存进度，仍然可以玩完整个故事。"
-          : "",
+          : ""),
   );
   const [busy, setBusy] = useState(false);
   const compact = useCompactLayout();
@@ -167,6 +169,11 @@ export default function App() {
     }
   }, [settings]);
   useEffect(() => {
+    const failed = () => setStorageNotice(storageWarning);
+    window.addEventListener("forest-storage-error", failed);
+    return () => window.removeEventListener("forest-storage-error", failed);
+  }, []);
+  useEffect(() => {
     const handler = () => {
       if (document.hidden) {
         stop();
@@ -204,7 +211,7 @@ export default function App() {
     stop,
   ]);
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" });
+    window.scrollTo(0, 0);
     setSelectedChoice(progress.stage === "choice" ? progress.choice : null);
     setHint(0);
     setFeedbackText("");
@@ -243,8 +250,8 @@ export default function App() {
   ]);
   useEffect(() => {
     if (screen !== "home" && screen !== "story") return;
-    const controller = new AbortController();
-    const { signal } = controller;
+    const controller = typeof AbortController === "function" ? new AbortController() : null;
+    const signal = controller?.signal;
     void (async () => {
       // 先让当前画面完成，再利用封面停留/阅读时间准备下一幕。
       await preloadArtwork(screen === "home" ? ["cover"] : sceneArtwork(progress.stage), { priority: "high", signal });
@@ -252,7 +259,7 @@ export default function App() {
         ? [...sceneArtwork(progress.stage), ...sceneArtwork("intro")]
         : upcomingArtwork(progress.stage), { signal });
     })();
-    return () => controller.abort();
+    return () => controller?.abort();
   }, [screen, progress.stage]);
 
   const feedback = (text: string, audio: AudioSequence) => {
@@ -927,7 +934,7 @@ export default function App() {
               这份小小的记录
             </h2>
             <p>
-              故事进度和野餐布局只保存在当前浏览器。没有账号，不记录孩子的姓名、声音或回答，也没有行为追踪。更换浏览器、清理网站数据或使用无痕模式，可能无法找回记录。
+              {isXhs ? "故事进度和野餐布局保存在当前设备的小工具记录中，低版本可能使用浏览器记录。清理数据或卸载后，记录可能丢失。没有账号，不记录孩子的姓名、声音或回答，也没有行为追踪。" : "故事进度和野餐布局只保存在当前浏览器。没有账号，不记录孩子的姓名、声音或回答，也没有行为追踪。更换浏览器、清理网站数据或使用无痕模式，可能无法找回记录。"}
             </p>
             <button className="danger-text" onClick={() => setConfirm("clear")}>
               清除本机故事记录

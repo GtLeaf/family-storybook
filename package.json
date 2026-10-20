@@ -10,7 +10,11 @@
     "typecheck": "tsc -b",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "build:xhs": "npm run typecheck && node scripts/build-xhs.mjs",
+    "test:xhs": "playwright test --config playwright.xhs.config.ts",
+    "check:xhs": "node scripts/check-xhs.mjs",
+    "package:xhs": "npm run build:xhs && npm run check:xhs"
   },
   "dependencies": {
     "lucide-react": "^1.59.0",

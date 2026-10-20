@@ -1,3 +1,5 @@
+import { isXhs } from "./distribution";
+import { xhsStorage } from "../xhs/storage";
 import { z } from "zod";
 import type { StoragePort } from "./progress";
 export const SETTINGS_KEY = "forest-story.settings.v1";
@@ -12,7 +14,7 @@ export const defaultSettings: Settings = {
   volume: 0.8,
   reducedMotion: false,
 };
-export const browserStorage: StoragePort = {
+export const browserStorage: StoragePort = isXhs ? xhsStorage : {
   getItem: (key) => window.localStorage.getItem(key),
   setItem: (key, value) => window.localStorage.setItem(key, value),
   removeItem: (key) => window.localStorage.removeItem(key),

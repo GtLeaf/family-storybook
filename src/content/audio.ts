@@ -1,14 +1,6 @@
 import { RESPONSES, STORY, type CompanionChoice, type Stage } from "./story";
 
-// 直接引用交付目录，由 Vite 生成适用于静态托管子目录的资源地址。
-const urls = import.meta.glob<string>(["../../audio/tts/v1/ui_*.mp3", "../../audio/tts/v1/optional_*.mp3"], {
-  eager: true,
-  query: "?url",
-  import: "default",
-});
-const sentenceUrls = import.meta.glob<string>("../../audio/tts/v2/*.mp3", {
-  eager: true, query: "?url", import: "default",
-});
+import { urls, sentenceUrls } from "./audioAssets";
 export type NarrationClip = `v2_${Stage}_${number}` | `v2_response_${CompanionChoice}_${number}`;
 export function storyLines(stage: Stage, choice: CompanionChoice | null) {
   return stage === "response" ? RESPONSES[choice ?? "listen"] : STORY[stage].lines;

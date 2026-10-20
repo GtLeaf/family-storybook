@@ -4,11 +4,9 @@ export function captionPages(text: string, limit = 36): string[] {
   let rest = Array.from(text);
   while (rest.length > limit) {
     const candidate = rest.slice(0, limit).join("");
-    const sentences = [...candidate.matchAll(/[。！？；]/g)];
-    const commas = [...candidate.matchAll(/，/g)];
-    const sentenceEnd = sentences.at(-1)?.index;
-    const boundary = sentenceEnd !== undefined && sentenceEnd >= limit / 2
-      ? sentenceEnd : commas.at(-1)?.index;
+    const sentenceEnd = Math.max(...["。", "！", "？", "；"].map(mark => candidate.lastIndexOf(mark)));
+    const commaEnd = candidate.lastIndexOf("，");
+    const boundary = sentenceEnd >= limit / 2 ? sentenceEnd : commaEnd;
     const count = boundary !== undefined && boundary >= limit / 2
       ? Array.from(candidate.slice(0, boundary + 1)).length : limit;
     pages.push(rest.slice(0, count).join(""));
