@@ -35,6 +35,7 @@ export function FindBoard({
       alt="阳光照进林间小路，草丛和树根旁藏着野餐用品"
       className="find-board"
     >
+      <div className="board-world" style={{ backgroundImage: `url(${artworkUrl("search")})` }}>
       <Cast actors={storyboard("find", null)[0].actors} still={still} />
       {ITEMS.map((item, i) => {
         const found = progress.found.includes(item);
@@ -85,6 +86,7 @@ export function FindBoard({
       <span className="scene-caption">
         <Sparkles size={14} /> 小发现，藏在不远的地方
       </span>
+      </div>
     </SceneArt>
   );
 }
@@ -111,6 +113,7 @@ export function PicnicBoard({
         alt="背风的大树下，铺着一张奶油色格纹野餐垫"
         className={`picnic-board ${readOnly ? "readonly-board" : ""} ${readOnly && shot > 0 ? "ending-close" : ""}`}
       >
+        <div className="board-world" style={{ backgroundImage: `url(${artworkUrl("picnic")})` }}>
         {stones
           ? <Cast actors={shot === 0 || progress.stones.length === 3 ? storyboard("stones", null)[0].actors : []} still={still} />
           : <PicnicCast seats={progress.seats} speaker={speaker} speaking={speaking} still={still} arrive={!readOnly} />}
@@ -214,6 +217,7 @@ export function PicnicBoard({
               </div>
             </>
           )}
+        </div>
         </div>
       </SceneArt>
       {!stones && !readOnly && (

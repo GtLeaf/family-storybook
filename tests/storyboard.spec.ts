@@ -1,10 +1,6 @@
+import { click } from "./helpers";
 import { test, expect, type Page } from "@playwright/test";
 
-async function click(page: Page, name: string) {
-  const button = page.getByRole("button", { name, exact: true });
-  await expect(button).toBeEnabled();
-  await button.click();
-}
 async function start(page: Page) {
   await page.goto("/");
   await click(page, "家长读");
@@ -31,8 +27,11 @@ test("页内镜头、手动讲述与角色出场顺序", async ({ page }) => {
   await expect(page.locator(".storyboard-scene")).toHaveClass(/camera-wide/);
   await click(page, "重看这一幕");
   await expect(page.locator(".current-story-line")).toContainText("维尼和小猪刚准备好野餐");
-  await page.getByText("读完整页", { exact: true }).click();
-  await expect(page.locator(".page-transcript")).toContainText("至少，刚才还没有");
+  await click(page, "读完整页");
+  await click(page, "下一段");
+  await click(page, "下一段");
+  await expect(page.getByRole("dialog")).toContainText("至少，刚才还没有");
+  await click(page, "关闭");
   await click(page, "我们来找找");
   await click(page, "找到杯子");
   await expect(page.getByRole("button", { name: "找到杯子", exact: true })).toHaveCSS("opacity", "0");
@@ -55,7 +54,7 @@ test("远行沿弯道缩小抵达树旁，支持暂停、重看和减少动态",
   const actors = page.locator(".scene-walk .scene-actor");
   const positions = () => actors.evaluateAll(nodes => nodes.map(node => {
     const actor = node.getBoundingClientRect();
-    const scene = node.closest(".scene-art")!.getBoundingClientRect();
+    const scene = node.closest(".narrative-world, .board-world")!.getBoundingClientRect();
     return { x: (actor.x + actor.width / 2 - scene.x) / scene.width,
       feet: (actor.bottom - scene.y) / scene.height, width: actor.width / scene.width };
   }));
@@ -65,7 +64,7 @@ test("远行沿弯道缩小抵达树旁，支持暂停、重看和减少动态",
   await actors.evaluateAll(nodes => nodes.forEach(node => {
     node.getAnimations().forEach(animation => { animation.currentTime = 3000; });
   }));
-  await click(page, "歇一会儿");
+  await click(page, "更多");
   await expect(actors.first()).toHaveCSS("animation-play-state", "paused");
   await expect(actors.first().locator(".actor-body")).toHaveCSS("animation-play-state", "paused");
   await expect(actors.first().locator(".actor-body")).toHaveCSS("animation-name", "paper-walk");
@@ -114,11 +113,11 @@ test("陪伴分支画面不同，讨论继承站位，重新选择会更新画�
   await page.getByRole("button", { name: "在旁边陪一会儿" }).click();
   await click(page, "就这样陪他");
   await expect(bear).toHaveAttribute("data-facing", "right");
-  await expect(page.locator(".scene-caption")).toContainText("安静地陪在旁边");
+  await expect(page.locator(".storyboard-scene > img")).toHaveAttribute("alt", /安静地陪在旁边/);
   const before = await bear.getAttribute("style");
   await click(page, "留一点时间聊聊");
   expect(await bear.getAttribute("style")).toBe(before);
-  await expect(page.locator(".scene-caption")).toContainText("你们的声音");
+  await expect(page.locator(".storyboard-scene > img")).toHaveAttribute("alt", /你们的声音/);
   await page.screenshot({ path: `test-results/storyboard-companion-${test.info().project.name}.png`, fullPage: true });
 });
 
@@ -147,7 +146,7 @@ test("逐句配音结束后切换镜头和发言者，返回取消旧语句", as
   await finish();
   await expect.poll(() => page.evaluate(() => window.audioPlayer?.src)).toContain("v2_intro_2.mp3");
   await expect(page.locator(".actor-bear .actor-body")).toHaveClass(/actor-speaking/);
-  await click(page, "歇一会儿");
+  await click(page, "更多");
   expect(await page.evaluate(() => window.audioPlayer?.paused)).toBe(true);
   await click(page, "继续故事");
   await click(page, "我们来找找");
@@ -166,7 +165,7 @@ test("固定物与人物位置保留到结尾，暂停和减少动态可用", as
   const target = page.getByRole("button", { name: "给第1个垫角放石头", exact: true });
   const relativeBounds = () => target.evaluate(node => {
     const box = node.getBoundingClientRect();
-    const scene = node.closest(".scene-art")!.getBoundingClientRect();
+    const scene = node.closest(".narrative-world, .board-world")!.getBoundingClientRect();
     return { x: box.x - scene.x, y: box.y - scene.y, width: box.width, height: box.height };
   });
   const bounds = await relativeBounds();
@@ -185,7 +184,7 @@ test("固定物与人物位置保留到结尾，暂停和减少动态可用", as
   expect(friends).toEqual(["pig", "donkey", "bear"]);
   await expect(page.locator(".fixed-stone")).toHaveCount(3);
   await expect(page.locator(".decoration-space svg")).toHaveCount(1);
-  await click(page, "歇一会儿");
+  await click(page, "更多");
   await expect(page.locator(".wind-leaf-0")).toHaveCSS("animation-play-state", "paused");
   await click(page, "声音与家长设置");
   await page.getByRole("checkbox", { name: "减少动态效果" }).check();

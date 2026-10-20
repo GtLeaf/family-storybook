@@ -23,8 +23,8 @@
 .actor-carried-basket > svg { display: block; width: 100%; height: auto; }
 .actor-arrive .actor-facing { animation: paper-arrive 1.8s ease-out both; }
 .storyboard-scene > img { transition: transform .65s ease; }
-.camera-props > img, .camera-props > .scene-cast { transform: scale(1.12); transform-origin: 58% 76%; }
-.camera-donkey > img, .camera-donkey > .scene-cast { transform: scale(1.12); transform-origin: 30% 62%; }
+.camera-props > img, .camera-props .scene-cast { transform: scale(1.12); transform-origin: 58% 76%; }
+.camera-donkey > img, .camera-donkey .scene-cast { transform: scale(1.12); transform-origin: 30% 62%; }
 .scene-caption { z-index: 6; background: #fbfaf0dc; padding: 7px 8px; font-size: 10px; pointer-events: none; }
 .wind-layer { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
 .wind-leaf { position: absolute; width: 4%; height: auto; opacity: 0; animation: leaf-passing 4.5s ease-in-out 1 both; }
@@ -80,10 +80,10 @@
 .plate span.place-name { display: block; padding: 1px 5px; margin-top: 1px; background: #f5f3e9; border: 1px solid #d0cbb8; border-radius: 2px; }
 .decoration-row { left: 30%; right: 30%; height: 30%; bottom: 0; }
 .decoration-space > svg { animation: prop-arrival .3s ease-out; }
-.picnic-board > .scene-cast { z-index: 2; }
-.readonly-board > .wind-layer { z-index: 5; }
-.readonly-board > img, .readonly-board > .scene-cast, .readonly-board > .blanket { transition: scale .65s ease; transform-origin: 50% 50%; }
-.ending-close > img, .ending-close > .scene-cast, .ending-close > .blanket { scale: 1.04; }
+.picnic-board .scene-cast { z-index: 2; }
+.readonly-board .wind-layer { z-index: 5; }
+.readonly-board > img, .readonly-board .scene-cast, .readonly-board .blanket { transition: scale .65s ease; transform-origin: 50% 50%; }
+.ending-close > img, .ending-close .scene-cast, .ending-close .blanket { scale: 1.04; }
 .story-paused *, .story-paused *::before, .story-paused *::after { animation-play-state: paused !important; }
 .cast-still .actor-body, .cast-still .actor-facing { animation: none !important; }
 @keyframes paper-speak { 0%,100% { transform: rotate(0); } 35% { transform: rotate(-1.3deg) translateY(-1%); } 70% { transform: rotate(.7deg); } }

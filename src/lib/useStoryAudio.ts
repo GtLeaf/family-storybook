@@ -2,7 +2,11 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { audioUrl, type AudioSequence } from "../content/audio";
 
 type AudioStatus = "idle" | "speaking" | "unavailable";
-export type AudioCues = { onClip?: (index: number) => void; onComplete?: () => void };
+export type AudioCues = {
+  onClip?: (index: number) => void;
+  onProgress?: (index: number, fraction: number) => void;
+  onComplete?: () => void;
+};
 
 export function useStoryAudio(volume: number) {
   const [status, setStatus] = useState<AudioStatus>("idle");
@@ -25,6 +29,7 @@ export function useStoryAudio(volume: number) {
     audio.onplaying = null;
     audio.onwaiting = null;
     audio.onended = null;
+    audio.ontimeupdate = null;
     audio.onerror = null;
     audio.pause();
     audio.removeAttribute("src");
@@ -78,6 +83,10 @@ export function useStoryAudio(volume: number) {
         cues?.onClip?.(index);
       };
       audio.onwaiting = waitForAudio;
+      audio.ontimeupdate = () => {
+        if (token === generation.current && Number.isFinite(audio.duration) && audio.duration > 0)
+          cues?.onProgress?.(index, audio.currentTime / audio.duration);
+      };
       audio.onended = () => {
         if (token !== generation.current) return;
         clearWatchdog();

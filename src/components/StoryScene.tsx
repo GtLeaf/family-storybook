@@ -50,12 +50,14 @@ export function StoryScene({ stage, choice, shot: index, speaker, speaking, stil
   return <SceneArt art={STORY[stage].art} alt={shot.caption}
     className={`narrative-scene storyboard-scene scene-${stage} camera-${shot.camera ?? "wide"}`}
     priority>
+    <div className="narrative-world">
     <Cast actors={shot.actors} speaker={speaker} speaking={speaking} still={still} carryBasket={stage === "walk"} />
     {["intro", "wind-talk", "walk"].includes(stage) && <Wind quiet={stage !== "intro"} />}
     {stage === "wind-talk" && <div className="gathered-props" aria-hidden="true">
       <Prop item="basket" /><Prop item="cup" /><Prop item="napkin" />
     </div>}
     <span className="scene-caption">{shot.caption}</span>
+    </div>
   </SceneArt>;
 }
 
@@ -63,7 +65,8 @@ export function PicnicCast({ seats, speaker, speaking = false, still = false, ar
   seats: (Friend | null)[]; speaker?: string; speaking?: boolean; still?: boolean; arrive?: boolean;
 }) {
   const actors: Actor[] = seats.flatMap((friend, i) => friend ? [{
-    friend, x: [23, 50, 77][i], y: [38, 30, 38][i],
+    // 维尼身形较高，脚底下移，给结尾轻微推近后的头部留出空间。
+    friend, x: [23, 50, 77][i], y: friend === "bear" ? 40 : [38, 30, 38][i],
     width: friend === "donkey" ? 28 : friend === "bear" ? 9 : 8,
     facing: i === 2 ? "left" : "right",
     motion: arrive ? "arrive" : undefined,

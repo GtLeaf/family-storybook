@@ -1,0 +1,195 @@
+/* 手机文案单独滚动，操作栏由满高布局吸底；桌面保留展开的绘本布局。 */
+.mobile-scene-label { display: none; }
+.board-world { display: contents; }
+.narrative-world, .stage-viewport { display: contents; }
+.reading-dialog-page { min-height: 210px; padding: 22px 0 12px; }
+.reading-dialog-page .eyebrow { margin-bottom: 20px; }
+.reading-dialog-page .speaker { margin: 12px 0; }
+.reading-dialog-page p { font-size: 18px; line-height: 1.65; margin-top: 14px; }
+.reading-pagination { display: flex; align-items: center; justify-content: space-between; gap: 8px; border-top: 1px solid var(--line); }
+.reading-pagination > span { font-size: 12px; color: var(--muted); }
+.pause-story-tools { display: flex; justify-content: space-between; border-bottom: 1px solid var(--line); }
+
+@media (max-width: 650px) {
+  .app {
+    height: 100svh;
+    height: 100dvh;
+    min-height: 0;
+    padding: env(safe-area-inset-top, 0px) max(12px, env(safe-area-inset-right, 0px)) env(safe-area-inset-bottom, 0px) max(12px, env(safe-area-inset-left, 0px));
+    display: flex;
+    flex-direction: column;
+  }
+  .site-header { height: 56px; min-height: 56px; width: 100%; gap: 8px; }
+  .wordmark { gap: 8px; }
+  .wordmark > span:last-child { font-size: 16px; letter-spacing: 1px; }
+  .wordmark small { display: none; }
+  .brand-mark { width: 32px; height: 32px; }
+  .parent-link { min-width: 44px; min-height: 44px; }
+  .screen-story .site-header, .screen-settings .site-header { display: none; }
+  .icon-button { width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
+  .text-button { min-height: 44px; }
+  .primary-button { min-height: 48px; padding: 10px 16px; font-size: 15px; }
+
+  /* 首页只保留封面、阅读方式和开始入口，其余说明收于家长页。 */
+  .home-page { flex: 1; min-height: 0; width: 100%; padding: 12px 0; display: flex; flex-direction: column; }
+  .home-intro, .little-promises, .home-footer { display: none; }
+  .book-cover { flex: 1; min-height: 0; display: flex; flex-direction: column; border-radius: 12px; overflow: hidden; }
+  .cover-art-wrap { flex: 1; min-height: 0; padding: 0; border-radius: 0; }
+  .cover-art { height: 100%; aspect-ratio: auto; border-radius: 0; }
+  .cover-art > img { object-fit: cover; }
+  .cover-stamp { display: none; }
+  .chapter-tag { top: 14px; left: 14px; bottom: auto; }
+  .book-information { flex: 0 0 auto; padding: 14px 16px 12px; }
+  .book-information > .eyebrow { font-size: 10px; letter-spacing: 1px; }
+  .book-information h2 { font-size: 25px; line-height: 1.4; margin: 4px 0 10px; }
+  .book-information > p, .book-meta, .under-button { display: none; }
+  .reading-toggle { margin: 0 0 10px; padding: 3px; }
+  .reading-toggle button { min-height: 44px; }
+  .start-button { margin: 0; min-height: 50px; }
+  .saved-note { display: flex; align-items: center; flex-wrap: wrap; gap: 0 4px; font-size: 10px; margin-top: 6px; line-height: 1.5; }
+  .saved-note button { min-height: 36px; margin-left: auto; }
+  .home-page > .notice { flex-shrink: 0; margin: 8px 0 0; font-size: 12px; padding: 8px 10px; }
+
+  .story-page { flex: 1; min-height: 0; width: 100%; padding: 0; position: relative; display: flex; flex-direction: column; }
+  .story-toolbar { height: 48px; min-height: 48px; margin: 0; gap: 2px; }
+  .story-toolbar > .text-button { padding: 4px 2px; font-size: 12px; white-space: nowrap; }
+  .story-toolbar .chapter-progress { display: none; }
+  .mobile-scene-label { display: block; flex: 1; min-width: 0; padding-left: 8px; font-size: 10px; color: #666a57; letter-spacing: .4px; }
+  .scene-title { position: absolute; z-index: 8; left: 10px; top: 58px; margin: 0; max-width: calc(100% - 20px); pointer-events: none; }
+  .scene-title .eyebrow { display: none; }
+  .scene-title h1 { font-size: 15px; line-height: 1.5; letter-spacing: .3px; margin: 0; padding: 6px 10px; color: #3c513a; background: #fcfbf2ed; border-radius: 3px 12px 12px 3px; }
+  .story-spread {
+    --actions-height: 64px;
+    --reading-reserve: 180px;
+    --stage-extras: 46px;
+    flex: 1; min-height: 0; container-type: size;
+    display: flex; flex-direction: column; align-items: stretch; gap: 0;
+  }
+  .stage-choice { --reading-reserve: 284px; }
+  .stage-find, .stage-stones { --stage-extras: 90px; }
+  .stage-picnic { --stage-extras: 130px; }
+  .stage-viewport { flex: 0 0 auto; width: 100%; display: block; }
+  .scene-visual { width: 100%; position: relative; display: flex; flex-direction: column; border-radius: 10px; background: #f4f2e9; }
+  .mobile-stage-title { position: relative; z-index: 8; flex-shrink: 0; margin: 4px 8px 6px; font-size: 15px; line-height: 24px; letter-spacing: .3px; padding: 6px 10px; color: #3c513a; background: #fcfbf2ed; border-radius: 3px 12px 12px 3px; pointer-events: none; }
+  .story-page .scene-art {
+    min-height: 0; container-type: size; border: 0; box-shadow: none; border-radius: 10px;
+  }
+  /* 只有故事演出区使用本页的空间预算，日记页独立分配画面高度。 */
+  .story-spread .scene-art {
+    flex: 0 0 auto;
+    height: min(66.666667cqw, calc(100cqh - var(--reading-reserve) - var(--actions-height) - var(--stage-extras)));
+    aspect-ratio: auto;
+  }
+  .story-page .narrative-scene > img { object-fit: contain; object-position: 50% 0; }
+  .story-page .narrative-scene { background: #f5f2e9; }
+  .narrative-world { display: block; position: absolute; left: 50%; bottom: 0; width: min(100cqw, 150cqh); aspect-ratio: 3 / 2; transform: translateX(-50%); }
+  .story-page .camera-props > img, .story-page .camera-donkey > img,
+  .camera-props > .narrative-world .scene-cast, .camera-donkey > .narrative-world .scene-cast { transform: none; }
+  .scene-caption { display: none; }
+
+  /* 互动坐标与原画共享 3:2 平面，缩小画面时也不裁切或错位。 */
+  .find-board > img, .picnic-board > img { object-fit: contain !important; filter: none; opacity: 1; scale: none; }
+  .board-world { display: block; position: absolute; bottom: 0; left: 50%; width: min(100cqw, 150cqh); aspect-ratio: 3 / 2; transform: translateX(-50%); background-size: 100% 100%; background-repeat: no-repeat; isolation: isolate; }
+  .found-tray, .task-count { position: relative; flex-shrink: 0; z-index: 7; margin: 6px 10px 0; padding: 5px 10px; min-height: 38px; border-radius: 6px; background: #fcfbf2ed; border: 1px solid #d6dbc8; font-size: 12px; }
+  .found-tray { display: flex; justify-content: space-between; gap: 4px; }
+  .found-tray > span { font-size: 11px; }
+  .found-tray > span > svg:first-child { width: 23px; height: 26px; }
+  .found-tray > b { font-size: 13px; }
+  .picnic-container { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+  .story-spread .picnic-container { flex: 0 0 auto; }
+  .picnic-tools { flex-shrink: 0; position: relative; z-index: 7; margin: 6px 8px 0; padding: 6px 8px; background: #fcfbf2f5; border-radius: 7px; }
+  .current-friend { min-height: 22px; gap: 5px; }
+  .current-friend > svg { display: none; }
+  .current-friend > div { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+  .current-friend strong { font-size: 12px; }
+  .current-friend small { font-size: 10px; }
+  .decoration-tools { border: 0; margin: 0; padding: 0; }
+  .decoration-tools > span { display: none; }
+  .decoration-tools > div { gap: 6px; margin: 4px 0 0; }
+  .decoration-tools button { min-height: 44px; padding: 3px 7px; font-size: 12px; }
+  .decoration-tools button > svg:first-child { width: 24px; height: 24px; }
+  .mobile-reading-area { flex: 1; min-height: 0; padding: 6px 6px 8px; display: flex; flex-direction: column; }
+  .stage-choice .choice-list { flex-shrink: 0; margin: 8px 0 0; display: flex; flex-direction: column; gap: 8px; }
+  .choice-list button { min-height: 56px; padding: 7px 10px; gap: 10px; background: #fcfbf2; }
+  .choice-list b { font-size: 14px; line-height: 1.5; }
+  .choice-list small { font-size: 10px; line-height: 1.5; margin-top: 2px; }
+  .choice-icon { width: 28px; height: 28px; flex-shrink: 0; }
+  .choice-icon svg { width: 23px; }
+
+  .mobile-caption { flex: 1; min-height: 0; position: relative; display: flex; flex-direction: column; }
+  .caption-meta { flex-shrink: 0; min-height: 36px; display: flex; align-items: center; gap: 8px; }
+  .caption-label, .caption-position { font-size: 11px; color: #6b715c; }
+  .caption-position { margin-right: auto; letter-spacing: 1px; }
+  .caption-meta .icon-button { margin-right: -6px; }
+  .follow-current { font-size: 11px; padding: 0; gap: 3px; }
+  .caption-scroll { flex: 1; min-height: 0; position: relative; overflow-y: auto; overscroll-behavior-y: contain; scrollbar-width: thin; scrollbar-color: #c2c9b5 transparent; padding: 0 4px 2px; touch-action: pan-y; }
+  .caption-paragraph + .caption-paragraph { margin-top: 14px; }
+  .mobile-caption .speaker { margin: 0 0 5px; font-size: 11px; line-height: 18px; }
+  .mobile-caption .current-story-line { min-height: 0; height: auto; }
+  .mobile-caption .caption-paragraph p { font-size: 18px; line-height: 27px; letter-spacing: .1px; margin: 0; }
+  .previous-story-line { color: #746c5c; }
+  .mobile-feedback { flex-shrink: 0; font-size: 11px; line-height: 16px; margin: 4px 4px 0; color: #637057; }
+  .mobile-feedback.audio-notice { font-size: 10px; padding: 2px 6px; margin: 4px 0 0; line-height: 14px; border: 0; border-radius: 4px; }
+  .mobile-story-actions { flex-shrink: 0; height: var(--actions-height); margin-top: auto; display: flex; align-items: center; gap: 6px; border-top: 1px solid var(--line); background: var(--paper); }
+  .mobile-audio-button { flex-shrink: 0; gap: 5px; padding: 4px 6px; font-size: 12px; }
+  .mobile-story-actions .primary-button { flex: 1; min-width: 0; width: auto; gap: 6px; }
+  .mobile-story-actions .primary-button:disabled { opacity: 1; background: #e5e9d9; color: #626e53; font-size: 13px; box-shadow: none; }
+  .story-footnote { display: none; }
+  .story-page > .notice { position: absolute; z-index: 10; top: 100px; left: 10px; right: 10px; margin: 0; font-size: 11px; padding: 8px; }
+
+  .diary-heading { margin: 0; padding: 3px 6px 10px; text-align: left; }
+  .diary-heading > .eyebrow, .diary-heading > p { display: none; }
+  .diary-heading h1 { font-size: 22px; margin: 0; line-height: 1.5; letter-spacing: 1px; }
+  .diary-sheet { flex: 1; min-height: 0; display: flex; flex-direction: column; padding: 0; transform: none; box-shadow: none; border-radius: 10px; }
+  .diary-sheet > .tape { display: none; }
+  .diary-sheet .picnic-container { min-height: 0; }
+  .diary-sheet .picnic-board { flex: 1; height: auto; aspect-ratio: auto; }
+  .diary-page .board-world { bottom: auto; top: 50%; transform: translate(-50%, -50%); }
+  .diary-writing { padding: 4px 12px; flex-shrink: 0; display: flex; gap: 8px; align-items: center; }
+  .diary-writing > .eyebrow, .diary-writing > h2, .diary-writing > p, .diary-seal { display: none; }
+  .diary-friends { flex: 1; gap: 14px; margin: 0; }
+  .diary-friends > span { font-size: 12px; }
+  .diary-friends small { margin-top: 0; }
+  .diary-writing > .text-button { max-width: 100px; gap: 4px; font-size: 11px; line-height: 1.5; }
+  .diary-page > .offline-invitation { display: none; }
+  .diary-actions { flex-shrink: 0; display: grid; grid-template-columns: 1fr 1fr; width: 100%; max-width: none; gap: 0 8px; padding: 4px 0 8px; }
+  .diary-actions .primary-button { grid-row: 2; grid-column: 1 / -1; }
+  .diary-actions > .text-button { justify-content: center; }
+  .diary-page > .audio-notice { margin: 0 0 4px; padding: 4px 8px; font-size: 10px; }
+
+  .settings-page { flex: 1; min-height: 0; margin: 0; padding: 0 4px 12px; width: 100%; }
+  .settings-page > .back-link { margin: 0; }
+  .settings-page > .eyebrow { display: none; }
+  .settings-page > h1 { font-size: 24px; margin: 0 0 10px; }
+  .settings-intro { display: none; }
+  .settings-tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); }
+  .settings-tabs button { flex: 1; min-height: 44px; font-size: 14px; border-bottom: 3px solid transparent; }
+  .settings-tabs button[aria-selected="true"] { border-color: var(--green); color: var(--green); background: #e9ecdf; border-radius: 6px 6px 0 0; }
+  .settings-section { display: none; padding: 16px 0 0; border: 0; }
+  [data-settings-tab="tips"] .section-tips, [data-settings-tab="comfort"] .section-comfort,
+  [data-settings-tab="record"] .section-record, [data-settings-tab="about"] .section-about { display: block; }
+  .settings-section h2 { font-size: 17px; margin-bottom: 10px; }
+  .settings-section p, .settings-section li { font-size: 13px; line-height: 1.85; }
+  .setting-row { min-height: 64px; padding: 5px 0; gap: 8px; }
+  .setting-row small { font-size: 10px; margin-top: 2px; }
+  .setting-row b { font-size: 14px; }
+  .settings-section .fine-print { margin-top: 6px; }
+  .settings-section .notice, .settings-section .audio-notice { padding: 6px 8px; margin: 6px 0; font-size: 11px; }
+  .credits p { margin-bottom: 12px; }
+  .version-note { margin-top: 10px; }
+  .dialog { max-height: calc(100dvh - 32px); width: calc(100% - 32px); padding: 18px; }
+  .dialog-header h2 { font-size: 21px; }
+  .pause-art { display: none; }
+  .dialog-copy { margin: 10px 0 16px; }
+}
+
+@media (max-width: 650px) and (max-height: 650px) {
+  .story-spread { --actions-height: 58px; }
+  .mobile-feedback { font-size: 10px; line-height: 13px; }
+  .book-information { padding: 10px 14px; }
+  .book-information > .eyebrow { display: none; }
+  .book-information h2 { font-size: 23px; margin: 0 0 8px; }
+  .setting-row { min-height: 60px; }
+  .settings-section { padding-top: 12px; }
+  .settings-section h2 { margin-bottom: 4px; }
+}

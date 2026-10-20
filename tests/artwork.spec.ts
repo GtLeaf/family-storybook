@@ -1,3 +1,4 @@
+import { click } from "./helpers";
 import { test, expect } from "@playwright/test";
 
 const fileName = (url: string) => new URL(url).pathname.split("/").pop()!;
@@ -61,7 +62,7 @@ test("开场期间预取寻找和小路，翻页与 SVG 遮挡复用相同图片
     await expect.poll(() => completed.has(file)).toBe(true);
   expect(requested).not.toContain("picnic.webp");
   const before = requested.filter(name => name === "search.webp").length;
-  await page.getByRole("button", { name: "我们来找找", exact: true }).click();
+  await click(page, "我们来找找");
   await decodedScene(page, ".find-board");
   expect(requested.filter(name => name === "search.webp")).toHaveLength(before);
   const background = await page.locator(".find-board > img").getAttribute("src");
@@ -86,7 +87,7 @@ test("预取失败后切到当前场景仍会重试，不保留失败缓存", as
   await page.getByRole("button", { name: "家长读", exact: true }).click();
   await page.getByRole("button", { name: "开始一起玩", exact: true }).click();
   await expect.poll(() => failed).toBe(true);
-  await page.getByRole("button", { name: "我们来找找", exact: true }).click();
+  await click(page, "我们来找找");
   await decodedScene(page, ".find-board");
   await expect(page.getByText("森林的画面还在路上")).toHaveCount(0);
   await page.getByRole("button", { name: "找到杯子", exact: true }).click();

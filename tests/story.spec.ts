@@ -1,10 +1,6 @@
+import { click } from "./helpers";
 import { test, expect, type Page } from "@playwright/test";
 const SAVE_KEY = "forest-story.progress.v1";
-async function click(page: Page, label: string) {
-  const button = page.getByRole("button", { name: label, exact: true });
-  await expect(button).toBeEnabled();
-  await button.click();
-}
 async function start(page: Page) {
   await page.goto("/");
   await click(page, "家长读");
@@ -109,11 +105,16 @@ for (const choice of ["listen", "stay"] as const)
     expect(errors).toEqual([]);
   });
 
-test("逐页返回保留收集，第一页返回书架，分支可重选", async ({ page }) => {
+test("逐页返回保留收集，第一页禁用后退并可回书架，分支可重选", async ({ page }) => {
   await start(page);
   await click(page, "找到杯子");
+  await click(page, "书架");
+  await expect(page.getByText("上次读到：", { exact: false })).toContainText("小东西，藏在哪里");
+  await click(page, "继续这次小冒险");
+  await expect(page.getByRole("button", { name: "找到杯子", exact: true })).toBeDisabled();
   await click(page, "上一页");
   await expect(page.getByRole("heading", { name: "咦，风也来野餐了" })).toBeVisible();
+  await expect(page.getByRole("button", { name: "上一页", exact: true })).toBeDisabled();
   await click(page, "书架");
   await click(page, "继续这次小冒险");
   await click(page, "我们来找找");
@@ -139,9 +140,10 @@ test("暂停、帮助、返回书架、重玩取消与清除确认", async ({ pa
   await click(page, "找到杯子");
   await click(page, "帮帮我");
   await expect(page.locator(".find-object.hinted:not(.found)")).toHaveCount(2);
-  await click(page, "歇一会儿");
+  await click(page, "更多");
   await expect(page.getByRole("dialog")).toBeVisible();
-  await click(page, "先回书架");
+  await click(page, "继续故事");
+  await click(page, "书架");
   await click(page, "从头玩");
   await click(page, "保留记录，返回");
   await click(page, "继续这次小冒险");
@@ -151,6 +153,7 @@ test("暂停、帮助、返回书架、重玩取消与清除确认", async ({ pa
   await click(page, "家长小角落");
   await page.getByRole("checkbox", { name: "减少动态效果" }).check();
   await expect(page.locator(".app")).toHaveClass(/reduce-motion/);
+  await page.getByRole("tab", { name: "记录", exact: true }).click();
   await click(page, "清除本机故事记录");
   await click(page, "保留记录，返回");
   expect(
@@ -183,7 +186,7 @@ test("录音加载失败仍可推进，后台会暂停", async ({ page }) => {
     });
     document.dispatchEvent(new Event("visibilitychange"));
   });
-  await expect(page.getByRole("dialog", { name: "森林会等你" })).toBeVisible();
+  await expect(page.getByRole("dialog", { name: "故事歇一会儿" })).toBeVisible();
   await page.evaluate(() => {
     Object.defineProperty(document, "hidden", {
       configurable: true,
@@ -260,7 +263,7 @@ test("320 / 390 / 430 / 1280 布局无横向溢出", async ({ page }) => {
   await click(page, "家长读");
   await click(page, "开始一起玩");
   await click(page, "我们来找找");
-  for (const name of ["上一页", "歇一会儿"]) {
+  for (const name of ["上一页", "更多"]) {
     await expect(page.getByRole("button", { name, exact: true })).toBeInViewport();
   }
   expect(
